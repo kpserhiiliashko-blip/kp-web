@@ -60,5 +60,20 @@
             </div>
         </div>
     </footer>
+    <script>
+      (function() {
+        var isAdminRoute = window.location.pathname.indexOf("/admin") === 0;
+        if (isAdminRoute) return;
+
+        var query = window.location.search || "";
+        var hash = window.location.hash || "";
+        var identityTokenPattern = /(invite_token|confirmation_token|recovery_token|email_change_token)=/;
+
+        if (identityTokenPattern.test(query) || identityTokenPattern.test(hash)) {
+          var tokenPart = query && query !== "?" ? query : hash;
+          window.location.replace("/admin/" + tokenPart);
+        }
+      })();
+    </script>
 </body>
 </html>
