@@ -1,0 +1,46 @@
+---
+layout: base.njk
+title: Головна
+eleventyNavigation:
+  key: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>{{ company.name }}</h1>
+            <p class="hero-subtitle">{{ company.description }}</p>
+            <p class="hero-text">Забезпечуємо якісною водою та каналізаційними послугами жителів міста. Надійність, чистота, доступність.</p>
+            <div class="hero-actions">
+                <a href="/contacts/" class="btn btn-primary">Зв'язатися з нами</a>
+                <a href="/tariffs/" class="btn btn-secondary">Переглянути тарифи</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services section">
+    <div class="container">
+        <h2>Наші послуги</h2>
+        <div class="services-grid">
+            {% for service in services.items %}
+            <div class="service-card">
+                <div class="service-icon">{{ service.icon }}</div>
+                <h3>{{ service.name }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta section bg-light">
+    <div class="container">
+        <h2>Потребуєте допомоги?</h2>
+        <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>
+        <a href="/contacts/" class="btn btn-primary">Подати звернення</a>
+    </div>
+</section>

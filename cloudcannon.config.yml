@@ -1,0 +1,46 @@
+# CloudCannon Configuration
+
+collections:
+  posts:
+    path: src/news
+    output: true
+    url: /news/[slug]/
+    filter: draft != true
+    sort:
+      key: date
+      reverse: true
+
+_inputs:
+  title:
+    type: text
+    label: Title
+  date:
+    type: datetime
+    label: Published Date
+  excerpt:
+    type: textarea
+    label: Excerpt
+  content:
+    type: markdown
+    label: Content
+
+_editables:
+  content:
+    format: markdown
+    transforms:
+      - ify
+
+_structures:
+  tariff_item:
+    values:
+      - label: Tariff
+        value:
+          name:
+          price:
+          unit:
+
+_select_data:
+  tariff_types:
+    - water
+    - hot
+    - other

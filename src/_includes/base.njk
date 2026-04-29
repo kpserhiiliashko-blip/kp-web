@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - ВодоКанал</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo-link">
+                    <div class="logo">
+                        <h1>{{ company.name }}</h1>
+                        <p class="tagline">Вода для вашого дома</p>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        {% for item in navigation.items %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{ company.name }}</h3>
+                    <p>{{ company.description }}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>Телефон: <a href="tel:{{ company.phone }}">{{ company.phone }}</a></p>
+                    <p>Email: <a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+                    <p>{{ company.address }}</p>
+                    <p class="hours">{{ company.hours }}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навігація</h3>
+                    <ul class="footer-nav">
+                        {% for item in navigation.items %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                        <li><a href="/admin/">Редактор новин</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{ company.name }}. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

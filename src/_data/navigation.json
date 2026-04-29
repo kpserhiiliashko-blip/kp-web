@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "title": "Послуги", "url": "/services/" },
+    { "title": "Тарифи", "url": "/tariffs/" },
+    { "title": "Документи", "url": "/documents/" },
+    { "title": "Новини", "url": "/news/" },
+    { "title": "Контакти", "url": "/contacts/" }
+  ]
+}
