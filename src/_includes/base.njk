@@ -67,6 +67,7 @@
     </footer>
     <script>
       (function() {
+        document.documentElement.classList.add("js");
         var navToggle = document.querySelector(".nav-toggle");
         var navList = document.querySelector(".nav-list");
         if (navToggle && navList) {
@@ -81,6 +82,13 @@
               navToggle.setAttribute("aria-expanded", "false");
               navList.classList.remove("is-open");
             });
+          });
+
+          window.addEventListener("resize", function() {
+            if (window.innerWidth > 768) {
+              navToggle.setAttribute("aria-expanded", "false");
+              navList.classList.remove("is-open");
+            }
           });
         }
 
