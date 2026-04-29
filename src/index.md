@@ -11,7 +11,7 @@ eleventyNavigation:
         <div class="hero-content">
             <h1>{{ company.name }}</h1>
             <p class="hero-subtitle">{{ company.description }}</p>
-            <p class="hero-text">Забезпечуємо якісною водою та каналізаційними послугами жителів міста. Надійність, чистота, доступність.</p>
+            <p class="hero-text">Надаємо комунальні послуги для жителів громади м. Порожньо: постачання води, водовідведення, вивезення ТПВ, викачування септиків та управління багатоквартирними будинками.</p>
             <div class="hero-actions">
                 <a href="/contacts/" class="btn btn-primary">Зв'язатися з нами</a>
                 <a href="/tariffs/" class="btn btn-secondary">Переглянути тарифи</a>

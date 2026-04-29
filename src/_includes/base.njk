@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - ВодоКанал</title>
+    <title>{{ title }} - {{ company.name }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
                 <a href="/" class="logo-link">
                     <div class="logo">
                         <h1>{{ company.name }}</h1>
-                        <p class="tagline">Вода для вашого дома</p>
+                        <p class="tagline">{{ company.tagline }}</p>
                     </div>
                 </a>
                 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
