@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
+  repo: kpserhiiliashko-blip/kp-web
   branch: main
   auth_scope: repo
 media_folder: "assets/uploads"
