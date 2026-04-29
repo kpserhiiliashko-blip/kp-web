@@ -15,6 +15,11 @@ collections:
     extension: "md"
     fields:
       - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "Дата", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - {
+          label: "Дата",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
       - { label: "Анонс", name: "excerpt", widget: "text", required: false }
       - { label: "Текст", name: "body", widget: "markdown" }

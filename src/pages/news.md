@@ -28,4 +28,5 @@ permalink: /news/
         <p class="empty-state">Наразі нема новин. Якщо у вас є інформація для поділу, звертайтесь до <a href="mailto:{{ company.email }}">нас</a>.</p>
         {% endif %}
     </div>
+
 </section>

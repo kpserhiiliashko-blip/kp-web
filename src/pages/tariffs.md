@@ -56,4 +56,5 @@ permalink: /tariffs/
             <p>Тарифи можуть змінюватися. Актуальну інформацію можна отримати за телефоном <strong>{{ company.phone }}</strong> або в офісі компанії.</p>
         </div>
     </div>
+
 </section>

@@ -1,26 +1,28 @@
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   // Копіюємо assets та admin папки в output
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("admin");
-  
+
   // Додаємо фільтр для дати
-  eleventyConfig.addFilter("dateFilter", function(dateObj) {
+  eleventyConfig.addFilter("dateFilter", function (dateObj) {
     const date = new Date(dateObj);
-    return date.toLocaleDateString('uk-UA', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("uk-UA", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   });
 
   // Додаємо фільтр для сортування по даті
-  eleventyConfig.addFilter("sortByDate", function(collection) {
+  eleventyConfig.addFilter("sortByDate", function (collection) {
     if (!collection) return [];
-    return collection.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+    return collection.sort(
+      (a, b) => new Date(b.data.date) - new Date(a.data.date),
+    );
   });
 
   // Додаємо колекцію для новин
-  eleventyConfig.addCollection("news", function(collectionApi) {
+  eleventyConfig.addCollection("news", function (collectionApi) {
     return collectionApi
       .getFilteredByGlob("src/news/**/*.md")
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
@@ -29,9 +31,9 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "_site"
+      output: "_site",
     },
     templateFormats: ["html", "md", "njk"],
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
   };
 };
