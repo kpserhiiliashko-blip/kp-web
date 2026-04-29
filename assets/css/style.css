@@ -166,6 +166,23 @@ main {
     gap: calc(var(--spacing-unit) * 3);
 }
 
+.nav-toggle {
+    display: none;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    border-radius: 6px;
+    width: 42px;
+    height: 38px;
+    padding: 8px;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 2px;
+    background: var(--text-color);
+    margin: 5px 0;
+}
+
 .nav-list a {
     font-weight: 500;
     transition: color 0.2s ease;
@@ -376,24 +393,42 @@ tr:hover {
 }
 
 /* ==================== Contacts ==================== */
-.contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: calc(var(--spacing-unit) * 3);
-    margin: calc(var(--spacing-unit) * 4) 0;
+.page-intro {
+    max-width: 760px;
+    color: var(--text-light);
+    margin-bottom: calc(var(--spacing-unit) * 4);
 }
 
-.contact-card {
-    background: var(--secondary-color);
-    padding: calc(var(--spacing-unit) * 3);
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid var(--border-color);
+.contact-primary {
+    background: linear-gradient(180deg, #f6faff 0%, #edf5ff 100%);
+    border: 1px solid #cfe3fb;
+    border-radius: 10px;
+    padding: calc(var(--spacing-unit) * 3.5);
+    margin: calc(var(--spacing-unit) * 3) 0;
 }
 
-.contact-card h2 {
+.contact-primary h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 26px;
+}
+
+.contact-list {
+    display: grid;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.contact-row {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: calc(var(--spacing-unit) * 2.5);
+}
+
+.contact-row h3 {
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 1);
+    font-size: 20px;
 }
 
 .contact-info {
@@ -410,6 +445,7 @@ tr:hover {
 .small {
     font-size: 14px;
     color: var(--text-light);
+    margin-bottom: 0;
 }
 
 .phone-urgent {
@@ -443,6 +479,7 @@ tr:hover {
 
 .faq-item h3 {
     margin-top: 0;
+    font-size: 20px;
 }
 
 /* ==================== News ==================== */
@@ -623,16 +660,46 @@ tr:hover {
         padding: 0 calc(var(--spacing-unit) * 2);
     }
 
+    .header {
+        position: static;
+    }
+
     .header-content {
-        flex-direction: column;
-        gap: calc(var(--spacing-unit) * 2);
-        text-align: center;
+        align-items: center;
+        gap: calc(var(--spacing-unit) * 1.5);
+        flex-wrap: wrap;
+    }
+
+    .logo-link {
+        flex: 1 1 auto;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav {
+        width: 100%;
     }
 
     .nav-list {
+        display: none;
         flex-direction: column;
-        gap: calc(var(--spacing-unit) * 1.5);
-        font-size: 14px;
+        gap: calc(var(--spacing-unit) * 1.25);
+        font-size: 16px;
+        background: var(--secondary-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: calc(var(--spacing-unit) * 2);
+    }
+
+    .nav-list.is-open {
+        display: flex;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: calc(var(--spacing-unit) * 0.75) 0;
     }
 
     h1 {
@@ -660,11 +727,11 @@ tr:hover {
         padding: calc(var(--spacing-unit) * 4) 0;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .section-inner {
+        margin-top: calc(var(--spacing-unit) * 3);
     }
 
-    .contacts-grid {
+    .services-grid {
         grid-template-columns: 1fr;
     }
 
@@ -678,6 +745,9 @@ tr:hover {
 
     table {
         font-size: 14px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
     th, td {
@@ -710,6 +780,10 @@ tr:hover {
         font-size: 20px;
     }
 
+    .tagline {
+        font-size: 13px;
+    }
+
     .hero {
         padding: calc(var(--spacing-unit) * 4) 0;
     }
@@ -726,7 +800,11 @@ tr:hover {
         padding: calc(var(--spacing-unit) * 2);
     }
 
-    .contact-card {
+    .contact-primary {
+        padding: calc(var(--spacing-unit) * 2.5);
+    }
+
+    .contact-row {
         padding: calc(var(--spacing-unit) * 2);
     }
 
@@ -736,6 +814,15 @@ tr:hover {
 
     .section-inner {
         padding: calc(var(--spacing-unit) * 2);
+    }
+
+    .contact-primary h2 {
+        font-size: 22px;
+    }
+
+    .contact-row h3,
+    .faq-item h3 {
+        font-size: 18px;
     }
 }
 

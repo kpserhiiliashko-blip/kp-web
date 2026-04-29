@@ -7,31 +7,12 @@ permalink: /contacts/
 <section class="section">
     <div class="container">
         <h1>Зв'яжіться з нами</h1>
+        <p class="page-intro">Обирайте зручний канал зв'язку нижче. Для аварійних звернень телефонуйте одразу на гарячу лінію.</p>
 
-        <div class="contacts-grid">
-            <div class="contact-card">
-                <h2>☎️ Телефон</h2>
-                <p class="contact-info">{{ company.phone }}</p>
-                <p class="small">Гарячая лінія — для аварійних ситуацій</p>
-            </div>
-
-            <div class="contact-card">
-                <h2>📧 Email</h2>
-                <p class="contact-info"><a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
-                <p class="small">Відповідь протягом 24 годин</p>
-            </div>
-
-            <div class="contact-card">
-                <h2>📍 Офіс</h2>
-                <p class="contact-info">{{ company.address }}</p>
-                <p class="small">Приймальні години</p>
-            </div>
-
-            <div class="contact-card">
-                <h2>🕐 Графік роботи</h2>
-                <p class="contact-info">{{ company.hours }}</p>
-                <p class="small">Аварійна служба 24/7</p>
-            </div>
+        <div class="contact-primary">
+            <h2>Основний канал звернення</h2>
+            <p class="contact-info"><a href="tel:{{ company.phone }}">{{ company.phone }}</a></p>
+            <p class="small">Гаряча лінія для консультацій та аварійних викликів.</p>
         </div>
 
         <section class="section-inner">
@@ -40,6 +21,29 @@ permalink: /contacts/
                 <p><strong>У разі аварії (витік, відсутність води):</strong></p>
                 <p class="phone-urgent">☎️ {{ company.phone }}</p>
                 <p>Служба аварійної допомоги працює цілодобово</p>
+            </div>
+        </section>
+
+        <section class="section-inner">
+            <h2>Інші способи зв'язку</h2>
+            <div class="contact-list">
+                <article class="contact-row">
+                    <h3>Email</h3>
+                    <p class="contact-info"><a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+                    <p class="small">Зазвичай відповідаємо протягом 24 годин.</p>
+                </article>
+
+                <article class="contact-row">
+                    <h3>Офіс</h3>
+                    <p class="contact-info">{{ company.address }}</p>
+                    <p class="small">Прийом громадян за графіком роботи підприємства.</p>
+                </article>
+
+                <article class="contact-row">
+                    <h3>Графік роботи</h3>
+                    <p class="contact-info">{{ company.hours }}</p>
+                    <p class="small">Аварійна служба працює 24/7.</p>
+                </article>
             </div>
         </section>
 

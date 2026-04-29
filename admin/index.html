@@ -8,6 +8,20 @@
       body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; }
       .cms-fallback { padding: 2rem; color: #333; background: #f4f4f4; min-height: 100vh; }
       .cms-fallback a { color: #0066cc; }
+      @media (max-width: 768px) {
+        body { font-size: 16px; }
+        #cms-root { min-height: 100vh; }
+        .nc-appHeader, .nc-app-header, [data-testid="app-header"] {
+          position: sticky !important;
+          top: 0;
+          z-index: 20;
+        }
+        .nc-entryEditor-header, .nc-entry-editor-header, [data-testid="editor-toolbar"] {
+          position: sticky !important;
+          top: 48px;
+          z-index: 19;
+        }
+      }
     </style>
   </head>
   <body>

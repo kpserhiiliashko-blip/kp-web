@@ -16,8 +16,13 @@
                         <p class="tagline">Вода для вашого дома</p>
                     </div>
                 </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <nav class="nav">
-                    <ul class="nav-list">
+                    <ul class="nav-list" id="main-nav">
                         {% for item in navigation.items %}
                         <li><a href="{{ item.url }}">{{ item.title }}</a></li>
                         {% endfor %}
@@ -62,6 +67,23 @@
     </footer>
     <script>
       (function() {
+        var navToggle = document.querySelector(".nav-toggle");
+        var navList = document.querySelector(".nav-list");
+        if (navToggle && navList) {
+          navToggle.addEventListener("click", function() {
+            var expanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+            navList.classList.toggle("is-open");
+          });
+
+          navList.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", function() {
+              navToggle.setAttribute("aria-expanded", "false");
+              navList.classList.remove("is-open");
+            });
+          });
+        }
+
         var isAdminRoute = window.location.pathname.indexOf("/admin") === 0;
         if (isAdminRoute) return;
 
