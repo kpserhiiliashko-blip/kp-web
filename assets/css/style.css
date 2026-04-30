@@ -15,7 +15,7 @@
   --radius-md: 12px;
   --max-width: 1100px;
   --font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
     Arial, sans-serif;
   --line-height: 1.65;
 }
@@ -36,7 +36,7 @@ body {
   line-height: var(--line-height);
   color: var(--text-color);
   background-color: var(--bg-color);
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 /* ==================== Typography ==================== */
@@ -55,19 +55,23 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(26px, 4vw, 38px);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
 }
 
 h2 {
-  font-size: clamp(22px, 3vw, 30px);
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
 }
 
 h3 {
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
 h4 {
-  font-size: 20px;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+}
+
+body {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
 }
 
 p {
@@ -107,7 +111,7 @@ main {
 }
 
 .section {
-  padding: calc(var(--spacing-unit) * 7) 0;
+  padding: calc(var(--spacing-unit) * 3) 0;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -185,8 +189,8 @@ main {
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   border-radius: 6px;
-  width: 42px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   padding: 8px;
 }
 
@@ -215,7 +219,7 @@ main {
     var(--primary-dark) 100%
   );
   color: white;
-  padding: calc(var(--spacing-unit) * 8) 0;
+  padding: calc(var(--spacing-unit) * 1) 0;
 }
 
 .hero-content {
@@ -295,6 +299,8 @@ main {
 }
 
 .services-grid {
+  display: grid;
+  gap: var(--gap-size);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
@@ -386,15 +392,21 @@ tr:hover {
   display: grid;
   gap: var(--gap-size);
   margin: calc(var(--spacing-unit) * 4) 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.document-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .document-item {
   display: flex;
-  gap: calc(var(--spacing-unit) * 2);
+  gap: var(--spacing-unit);
   padding: calc(var(--spacing-unit) * 2);
   background: var(--secondary-color);
   border-radius: var(--radius-md);
-  border-left: 4px solid var(--primary-color);
   transition: all 0.2s ease;
 }
 
@@ -402,18 +414,18 @@ tr:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.doc-icon {
+.document-icon {
   font-size: 32px;
   min-width: 50px;
   display: flex;
   align-items: center;
 }
 
-.doc-content h3 {
+.document-content h3 {
   margin-top: 0;
 }
 
-.doc-link {
+.document-link {
   display: inline-block;
   margin-top: calc(var(--spacing-unit) * 1);
   font-weight: 600;
@@ -493,7 +505,7 @@ tr:hover {
 /* ==================== FAQ ==================== */
 .faq {
   display: grid;
-  gap: var(--gap-size);
+  gap: calc(var(--gap-size) * 2) 0;
   margin: calc(var(--spacing-unit) * 2) 0;
 }
 
@@ -512,6 +524,7 @@ tr:hover {
 /* ==================== News ==================== */
 .news-list {
   display: flex;
+  gap: var(--gap-size);
   flex-direction: column;
   margin: calc(var(--spacing-unit) * 2.5) 0;
 }
@@ -598,7 +611,7 @@ tr:hover {
   border-left: 4px solid var(--primary-color);
   padding: calc(var(--spacing-unit) * 3);
   border-radius: var(--radius-sm);
-  margin: calc(var(--spacing-unit) * 4) 0;
+  margin-top: calc(var(--spacing-unit) * 4);
 }
 
 .info-box.warning {
@@ -624,7 +637,7 @@ tr:hover {
 .footer {
   background-color: #222;
   color: #eee;
-  padding: calc(var(--spacing-unit) * 6) 0 calc(var(--spacing-unit) * 3);
+  padding: calc(var(--spacing-unit) * 5) 0 calc(var(--spacing-unit) * 3);
   margin-top: calc(var(--spacing-unit) * 4);
 }
 
@@ -754,24 +767,12 @@ tr:hover {
     flex: 1 1 auto;
   }
 
-  .section {
-    padding: calc(var(--spacing-unit) * 4) 0;
-  }
-
   .section-inner {
     margin-top: calc(var(--spacing-unit) * 3);
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
   .footer-content {
     grid-template-columns: 1fr;
-  }
-
-  .document-item {
-    flex-direction: column;
   }
 
   table {
@@ -823,14 +824,6 @@ tr:hover {
     font-size: 13px;
   }
 
-  .hero {
-    padding: calc(var(--spacing-unit) * 4) 0;
-  }
-
-  .section {
-    padding: calc(var(--spacing-unit) * 3) 0;
-  }
-
   .tariff-section {
     padding: calc(var(--spacing-unit) * 2);
   }
@@ -863,6 +856,10 @@ tr:hover {
   .faq-item h3 {
     font-size: 18px;
   }
+}
+
+.header-content {
+  gap: calc(var(--spacing-unit) * 1);
 }
 
 /* ==================== Print Styles ==================== */

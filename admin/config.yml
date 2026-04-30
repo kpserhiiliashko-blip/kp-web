@@ -3,23 +3,23 @@ backend:
   branch: main
 editor:
   preview: false
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: 'assets/uploads'
+public_folder: 'assets/uploads'
 
 collections:
-  - name: "news"
-    label: "Новини"
-    folder: "src/news"
+  - name: 'news'
+    label: 'Новини'
+    folder: 'src/news'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "md"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    extension: 'md'
     fields:
-      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: 'Заголовок', name: 'title', widget: 'string' }
       - {
-          label: "Дата",
-          name: "date",
-          widget: "datetime",
-          format: "YYYY-MM-DD",
+          label: 'Дата',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD',
         }
-      - { label: "Анонс", name: "excerpt", widget: "text", required: false }
-      - { label: "Текст", name: "body", widget: "markdown" }
+      - { label: 'Анонс', name: 'excerpt', widget: 'text', required: false }
+      - { label: 'Текст', name: 'body', widget: 'markdown' }

@@ -13,9 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
+    "11ty.ts": "^0.0.7",
     "prettier": "3.8.3"
   }
 }
