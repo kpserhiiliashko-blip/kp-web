@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - {{ company.name }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo-link">
+                    <div class="logo">
+                        <h1>{{ company.name }}</h1>
+                        <p class="tagline">{{ company.tagline }}</p>
+                    </div>
+                </a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav">
+                    <ul class="nav-list" id="main-nav">
+                        {% for item in navigation.items %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{ company.name }}</h3>
+                    <p>{{ company.description }}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакти</h3>
+                    <p>Телефон: <a href="tel:{{ company.phone }}">{{ company.phone }}</a></p>
+                    <p>Email: <a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
+                    <p>{{ company.address }}</p>
+                    <p class="hours">{{ company.hours }}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Навігація</h3>
+                    <ul class="footer-nav">
+                        {% for item in navigation.items %}
+                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                        <li><a href="/admin/">Адміністратору</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{ company.name }}. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      (function() {
+        document.documentElement.classList.add("js");
+        var navToggle = document.querySelector(".nav-toggle");
+        var navList = document.querySelector(".nav-list");
+        if (navToggle && navList) {
+          navToggle.addEventListener("click", function() {
+            var expanded = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+            navList.classList.toggle("is-open");
+          });
+
+          navList.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", function() {
+              navToggle.setAttribute("aria-expanded", "false");
+              navList.classList.remove("is-open");
+            });
+          });
+
+          window.addEventListener("resize", function() {
+            if (window.innerWidth > 768) {
+              navToggle.setAttribute("aria-expanded", "false");
+              navList.classList.remove("is-open");
+            }
+          });
+        }
+
+        var isAdminRoute = window.location.pathname.indexOf("/admin") === 0;
+        if (isAdminRoute) return;
+
+        var query = window.location.search || "";
+        var hash = window.location.hash || "";
+        var identityTokenPattern = /(invite_token|confirmation_token|recovery_token|email_change_token)=/;
+
+        if (identityTokenPattern.test(query) || identityTokenPattern.test(hash)) {
+          var tokenPart = query && query !== "?" ? query : hash;
+          window.location.replace("/admin/" + tokenPart);
+        }
+      })();
+    </script>
+</body>
+</html>
