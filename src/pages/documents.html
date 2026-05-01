@@ -1,0 +1,33 @@
+---
+layout: app.njk
+title: Документи
+permalink: /documents/
+---
+
+<section class="section">
+  <div class="container">
+    <h1>Документи та звіти</h1>
+
+    <div class="documents-list">
+      {% for document in documents.items %}
+      <div class="document-item">
+        <div class="document-icon">{{ document.icon }}</div>
+        <div class="document-content">
+          <h3>{{ document.name }}</h3>
+          <p>{{ document.description }}</p>
+          <a href="{{ document.file }}" class="document-link" target="_blank"
+            >Завантажити</a
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="info-box">
+      <h3>Запит на додаткові документи</h3>
+      <p>
+        Якщо вам потрібні інші документи, звертайтесь за адресою:
+        <strong>{{ company.email }}</strong>
+      </p>
+    </div>
+  </div>
+</section>

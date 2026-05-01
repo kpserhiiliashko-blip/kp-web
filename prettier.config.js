@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @see https://prettier.io/docs/configuration
@@ -7,7 +7,7 @@
 const config = {
   printWidth: 80,
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   tabWidth: 2,
   useTabs: false,
   semi: true,

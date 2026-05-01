@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Netlify CMS — Редактор новин</title>
+    <title>Netlify CMS — Редактор</title>
     <style>
       body {
         font-family:
           system-ui,
           -apple-system,
           BlinkMacSystemFont,
-          "Segoe UI",
+          'Segoe UI',
           sans-serif;
         margin: 0;
       }
@@ -32,14 +32,14 @@
         }
         .nc-appHeader,
         .nc-app-header,
-        [data-testid="app-header"] {
+        [data-testid='app-header'] {
           position: sticky !important;
           top: 0;
           z-index: 20;
         }
         .nc-entryEditor-header,
         .nc-entry-editor-header,
-        [data-testid="editor-toolbar"] {
+        [data-testid='editor-toolbar'] {
           position: sticky !important;
           top: 48px;
           z-index: 19;
@@ -48,7 +48,19 @@
     </style>
   </head>
   <body>
-    <div id="cms-root"></div>
+    <!-- <div id="cms-root"></div> -->
+    <a
+      href="/"
+      style="
+        text-decoration: underline;
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        color: #0066cc;
+      "
+      >Повернутися на сайт</a
+    >
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
     <script>
@@ -58,10 +70,10 @@
       }
 
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function (user) {
+        window.netlifyIdentity.on('init', function (user) {
           if (!user) {
-            window.netlifyIdentity.on("login", function () {
-              document.location.href = "/admin/";
+            window.netlifyIdentity.on('login', function () {
+              document.location.href = '/admin/';
             });
           }
         });
