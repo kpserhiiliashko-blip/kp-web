@@ -23,3 +23,33 @@ collections:
         }
       - { label: 'Анонс', name: 'excerpt', widget: 'text', required: false }
       - { label: 'Текст', name: 'body', widget: 'markdown' }
+  - name: 'documents'
+    label: 'Документи'
+    folder: 'src/documents'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    extension: 'md'
+    fields:
+      - { label: 'Назва', name: 'title', widget: 'string' }
+      - { label: 'Опис', name: 'body' }
+      - label: 'Тип / Емодзі'
+        name: 'emoji'
+        widget: 'select'
+        options: 
+          - label: 'Документ 📄'
+            value: '📄'
+          - label: 'Таблиця 📊'
+            value: '📊'
+          - label: 'Звіт 📋'
+            value: '📋'
+          - label: 'Файл 📁'
+            value: '📁'
+          - label: 'Замок 🔒'
+            value: '🔒'
+          - label: 'PDF 📕'
+            value: '📕'
+          - label: 'Книга 📖'
+            value: '📖'
+          - label: 'Чек ✅'
+            value: '✅'
+      - { label: 'Файл', name: 'file', widget: 'file' }
