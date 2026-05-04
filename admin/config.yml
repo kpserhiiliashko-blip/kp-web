@@ -36,7 +36,7 @@ collections:
       - label: 'Тип / Емодзі'
         name: 'emoji'
         widget: 'select'
-        options: 
+        options:
           - label: 'Документ 📄'
             value: '📄'
           - label: 'Таблиця 📊'

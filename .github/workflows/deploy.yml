@@ -32,12 +32,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages      
-    
+      name: github-pages
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: _site
