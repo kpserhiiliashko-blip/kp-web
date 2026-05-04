@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: kpserhiiliashko-blip/kp-web
   branch: main
 editor:
   preview: false
