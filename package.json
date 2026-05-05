@@ -8,7 +8,7 @@
     "build": "eleventy",
     "format": "prettier --write . **/*.{js,json,css,md,html}",
     "cleanup": "node -e \"require('fs').rmSync('./_site', { recursive: true, force: true })\"",
-    "deploy": "npm run cleanup && npm run build && npm run start"
+    "dev": "npm run cleanup && npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
