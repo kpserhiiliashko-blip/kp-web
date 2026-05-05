@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - {{ company.name }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/css/style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo-link">
+                <a href="{{ site.baseUrl }}/" class="logo-link">
                     <div class="logo">
                         <h1>{{ company.name }}</h1>
                         <p class="tagline">{{ company.tagline }}</p>
@@ -24,7 +24,7 @@
                 <nav class="nav">
                     <ul class="nav-list" id="main-nav">
                         {% for item in navigation.items %}
-                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        <li><a href="{{ site.baseUrl }}{{ item.url }}">{{ item.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -54,9 +54,9 @@
                     <h3>Навігація</h3>
                     <ul class="footer-nav">
                         {% for item in navigation.items %}
-                        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                        <li><a href="{{ site.baseUrl }}{{ item.url }}">{{ item.title }}</a></li>
                         {% endfor %}
-                        <li><a href="/admin/">Адміністратору</a></li>
+                        <li><a href="{{ site.baseUrl }}/admin/">Адміністратору</a></li>
                     </ul>
                 </div>
             </div>
