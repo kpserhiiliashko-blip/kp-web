@@ -6,8 +6,7 @@ editor:
   preview: false
 media_folder: 'assets/uploads'
 public_folder: 'assets/uploads'
-# Please run "npx netlify-cms-proxy-server" for local backend
-local_backend: true
+site_url: https://kpserhiiliashko-blip.github.io/kp-web/
 
 collections:
   - name: 'news'
