@@ -23,10 +23,10 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for item in tariffs.water %}
+            {% for tariff in tariffs.water %}
             <tr>
-              <td>{{ item.name }}</td>
-              <td class="price">{{ item.price }} {{ item.unit }}</td>
+              <td>{{ tariff.name }}</td>
+              <td class="price">{{ tariff.price }} {{ tariff.unit }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -43,10 +43,10 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for item in tariffs.hot %}
+            {% for tariff in tariffs.hot %}
             <tr>
-              <td>{{ item.name }}</td>
-              <td class="price">{{ item.price }} {{ item.unit }}</td>
+              <td>{{ tariff.name }}</td>
+              <td class="price">{{ tariff.price }} {{ tariff.unit }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -58,7 +58,7 @@ permalink: /tariffs/
       <h3>📋 Важливо</h3>
       <p>
         Тарифи можуть змінюватися. Актуальну інформацію можна отримати за
-        телефоном <strong>{{ company.phone }}</strong> або в офісі компанії.
+        телефоном <strong>{{ org.phone }}</strong> або в офісі компанії.
       </p>
     </div>
   </div>

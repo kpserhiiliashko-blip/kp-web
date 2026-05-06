@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - {{ company.name }}</title>
-    <link rel="stylesheet" href="{{ site.baseUrl }}/assets/css/style.css">
+    <title>{{ title }} - {{ org.name }}</title>
+    <link rel="stylesheet" href="{{ config.baseURL }}/assets/css/style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="{{ site.baseUrl }}/" class="logo-link">
+                <a href="{{ config.baseURL }}/" class="logo-link">
                     <div class="logo">
-                        <h1>{{ company.name }}</h1>
-                        <p class="tagline">{{ company.tagline }}</p>
+                        <h1>{{ org.name }}</h1>
+                        <p class="tagline">{{ org.tagline }}</p>
                     </div>
                 </a>
                 <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
@@ -23,8 +23,8 @@
                 </button>
                 <nav class="nav">
                     <ul class="nav-list" id="main-nav">
-                        {% for item in navigation.items %}
-                        <li><a href="{{ site.baseUrl }}{{ item.url }}">{{ item.title }}</a></li>
+                        {% for nav in navigation %}
+                        <li><a href="{{ nav.url }}">{{ nav.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -40,28 +40,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>{{ company.name }}</h3>
-                    <p>{{ company.description }}</p>
+                    <h3>{{ org.name }}</h3>
+                    <p>{{ org.description }}</p>
                 </div>
                 <div class="footer-section">
                     <h3>Контакти</h3>
-                    <p>Телефон: <a href="tel:{{ company.phone }}">{{ company.phone }}</a></p>
-                    <p>Email: <a href="mailto:{{ company.email }}">{{ company.email }}</a></p>
-                    <p>{{ company.address }}</p>
-                    <p class="hours">{{ company.hours }}</p>
+                    <p>Телефон: <a href="tel:{{ org.phone }}">{{ org.phone }}</a></p>
+                    <p>Email: <a href="mailto:{{ org.email }}">{{ org.email }}</a></p>
+                    <p>{{ org.address }}</p>
+                    <p class="hours">{{ org.hours }}</p>
                 </div>
                 <div class="footer-section">
                     <h3>Навігація</h3>
                     <ul class="footer-nav">
-                        {% for item in navigation.items %}
-                        <li><a href="{{ site.baseUrl }}{{ item.url }}">{{ item.title }}</a></li>
+                        {% for nav in navigation %}
+                        <li><a href="{{ nav.url }}">{{ nav.title }}</a></li>
                         {% endfor %}
-                        <li><a href="{{ site.baseUrl }}/admin/">Адміністратору</a></li>
+                        <li><a href="{{ config.routes.admin }}">Адміністратору</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 {{ company.name }}. Всі права захищені.</p>
+                <p>&copy; 2026 {{ org.name }}. Всі права захищені.</p>
             </div>
         </div>
     </footer>

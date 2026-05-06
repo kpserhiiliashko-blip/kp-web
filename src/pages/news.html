@@ -13,11 +13,15 @@ permalink: /news/
       sortedNews %}
       <article class="news-item">
         <div class="news-date">{{ post.data.date | dateFilter }}</div>
-        <h2><a href="{{ site.baseUrl }}{{ post.url }}">{{ post.data.title }}</a></h2>
+        <h2>
+          <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
+        </h2>
         <p class="news-excerpt">
           {{ post.data.excerpt or post.templateContent | truncate(200) }}
         </p>
-        <a href="{{ site.baseUrl }}{{ post.url }}" class="read-more">Читати далі →</a>
+        <a href="{{ config.baseURL }}{{ post.url }}" class="read-more"
+          >Читати далі →</a
+        >
       </article>
       {% endfor %}
     </div>
@@ -25,14 +29,14 @@ permalink: /news/
     <div class="news-admin-note">
       <p>
         Щоб додати або відредагувати новину, перейдіть до
-        <a href="{{ site.baseUrl }}/admin/">Редактору новин</a>.
+        <a href="{{ config.routes.admin }}">Редактору новин</a>.
       </p>
     </div>
 
     {% if collections.news.length == 0 %}
     <p class="empty-state">
-      Наразі нема новин. Якщо у вас є інформація для поділу, звертайтесь до
-      <a href="mailto:{{ company.email }}">нас</a>.
+      Новини відсутні. Якщо вам є що повідомити, звертайтесь за
+      <a href="mailto:{{ org.email }}">адресою</a>.
     </p>
     {% endif %}
   </div>

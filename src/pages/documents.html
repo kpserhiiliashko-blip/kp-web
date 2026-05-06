@@ -9,7 +9,7 @@ permalink: /documents/
     <h1>Документи та звіти</h1>
 
     <div class="documents-list">
-      {% for document in documents.items %}
+      {% for document in documents %}
       <div class="document-item">
         <div class="document-icon">{{ document.icon }}</div>
         <div class="document-content">
@@ -26,7 +26,7 @@ permalink: /documents/
       <h3>Запит на додаткові документи</h3>
       <p>
         Якщо вам потрібні інші документи, звертайтесь за адресою:
-        <strong>{{ company.email }}</strong>
+        <strong>{{ org.email }}</strong>
       </p>
     </div>
   </div>
