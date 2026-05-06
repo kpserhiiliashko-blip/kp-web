@@ -16,6 +16,12 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     extension: 'md'
     fields:
+      - {
+          label: 'Layout',
+          name: 'layout',
+          widget: 'hidden',
+          default: 'post.njk',
+        }
       - { label: 'Заголовок', name: 'title', widget: 'string' }
       - {
           label: 'Дата',
