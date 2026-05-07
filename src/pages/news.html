@@ -9,15 +9,15 @@ permalink: /news/
     <h1>Новини та оголошення</h1>
 
     <div class="news-list">
-      {% set sortedNews = collections.news | sortByDate %} {% for post in
-      sortedNews %}
+      {% for post in collections.news %}
       <article class="news-item">
         <div class="news-date">{{ post.data.date | dateFilter }}</div>
         <h2>
           <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
         </h2>
         <p class="news-excerpt">
-          {{ post.data.excerpt or post.templateContent | truncate(200) }}
+          {{ (post.data.excerpt or post.templateContent) | truncate(200) | safe
+          }}
         </p>
         <a href="{{ config.baseURL }}{{ post.url }}" class="read-more"
           >Читати далі →</a

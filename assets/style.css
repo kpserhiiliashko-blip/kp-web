@@ -36,7 +36,6 @@ body {
   line-height: var(--line-height);
   color: var(--text-color);
   background-color: var(--bg-color);
-  font-size: 1rem;
 }
 
 /* ==================== Typography ==================== */
@@ -145,6 +144,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: calc(var(--spacing-unit) * 2) 0;
+  gap: calc(var(--spacing-unit) * 1);
 }
 
 .logo h1 {
@@ -184,7 +184,7 @@ main {
   gap: 15px;
 }
 
-.nav-toggle {
+.nav-burger {
   display: none;
   border: 1px solid var(--border-color);
   background: var(--bg-color);
@@ -194,7 +194,7 @@ main {
   padding: 8px;
 }
 
-.nav-toggle span {
+.nav-burger span {
   display: block;
   height: 2px;
   background: var(--text-color);
@@ -292,12 +292,6 @@ main {
 }
 
 /* ==================== Grid & Cards ==================== */
-.grid {
-  display: grid;
-  gap: var(--gap-size);
-  margin: calc(var(--spacing-unit) * 4) 0;
-}
-
 .services-grid {
   display: grid;
   gap: var(--gap-size);
@@ -712,7 +706,7 @@ tr:hover {
     min-width: 0;
   }
 
-  .nav-toggle {
+  .nav-burger {
     display: block;
   }
 
@@ -720,7 +714,7 @@ tr:hover {
     width: 100%;
   }
 
-  html.js .nav-list {
+  .nav-list {
     display: none;
     flex-direction: column;
     gap: var(--gap-size);
@@ -731,21 +725,13 @@ tr:hover {
     padding: calc(var(--spacing-unit) * 2);
   }
 
-  html.js .nav-list.is-open {
+  .nav-list.is-open {
     display: flex;
   }
 
   .nav-list a {
     display: block;
     padding: calc(var(--spacing-unit) * 0.75) 0;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  h2 {
-    font-size: 21px;
   }
 
   .hero-actions {
@@ -800,18 +786,6 @@ tr:hover {
 }
 
 @media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 19px;
-  }
-
   .container {
     padding: 0 calc(var(--spacing-unit) * 1.5);
   }
@@ -856,10 +830,6 @@ tr:hover {
   .faq-item h3 {
     font-size: 18px;
   }
-}
-
-.header-content {
-  gap: calc(var(--spacing-unit) * 1);
 }
 
 /* ==================== Print Styles ==================== */

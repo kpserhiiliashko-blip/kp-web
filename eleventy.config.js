@@ -30,6 +30,12 @@ export default defineConfig((eleventyConfig) => {
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
+  eleventyConfig.addCollection('documents', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('src/documents/**/*.md')
+      .sort((a, b) => a.data.title.localeCompare(b.data.title));
+  });
+
   return {
     dir: {
       data: '_data',

@@ -33,7 +33,7 @@ eleventyNavigation:
   <div class="container">
     <h2>Наші послуги</h2>
     <div class="services-grid">
-      {% for service in services %}
+      {% for service in services.items %}
       <div class="service-card">
         <div class="service-icon">{{ service.icon }}</div>
         <h3>{{ service.name }}</h3>

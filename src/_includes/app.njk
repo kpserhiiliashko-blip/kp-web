@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - {{ org.name }}</title>
-    <link rel="stylesheet" href="{{ config.baseURL }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ config.baseURL }}/assets/style.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <a href="{{ config.baseURL }}/" class="logo-link">
+                <a href="{{ config.routes.home }}" class="logo-link">
                     <div class="logo">
                         <h1>{{ org.name }}</h1>
                         <p class="tagline">{{ org.tagline }}</p>
                     </div>
                 </a>
-                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
+                <button class="nav-burger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <nav class="nav">
                     <ul class="nav-list" id="main-nav">
-                        {% for nav in navigation %}
-                        <li><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+                        {% for navigation in navigation.items %}
+                        <li><a href="{{ navigation.url }}">{{ navigation.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -53,8 +53,8 @@
                 <div class="footer-section">
                     <h3>Навігація</h3>
                     <ul class="footer-nav">
-                        {% for nav in navigation %}
-                        <li><a href="{{ nav.url }}">{{ nav.title }}</a></li>
+                        {% for navigation in navigation.items %}
+                        <li><a href="{{ navigation.url }}">{{ navigation.title }}</a></li>
                         {% endfor %}
                         <li><a href="{{ config.routes.admin }}">Адміністратору</a></li>
                     </ul>
@@ -65,47 +65,7 @@
             </div>
         </div>
     </footer>
-    <script>
-      (function() {
-        document.documentElement.classList.add("js");
-        var navToggle = document.querySelector(".nav-toggle");
-        var navList = document.querySelector(".nav-list");
-        if (navToggle && navList) {
-          navToggle.addEventListener("click", function() {
-            var expanded = navToggle.getAttribute("aria-expanded") === "true";
-            navToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
-            navList.classList.toggle("is-open");
-          });
 
-          navList.querySelectorAll("a").forEach(function(link) {
-            link.addEventListener("click", function() {
-              navToggle.setAttribute("aria-expanded", "false");
-              navList.classList.remove("is-open");
-            });
-          });
-
-          window.addEventListener("resize", function() {
-            if (window.innerWidth > 768) {
-              navToggle.setAttribute("aria-expanded", "false");
-              navList.classList.remove("is-open");
-            }
-          });
-        }
-
-        var isAdminRoute = window.location.pathname.indexOf("/admin") === 0;
-        if (isAdminRoute) return;
-
-        var query = window.location.search || "";
-        var hash = window.location.hash || "";
-        var identityTokenPattern = /(invite_token|confirmation_token|recovery_token|email_change_token)=/;
-
-        if (identityTokenPattern.test(query) || identityTokenPattern.test(hash)) {
-          var tokenPart = (query && query !== "?") ? query.substring(1) : (hash ? hash.substring(1) : "");
-          if (tokenPart) {
-            window.location.replace("/admin/?" + tokenPart);
-          }
-        }
-      })();
-    </script>
+    <script src="{{ config.baseURL }}/assets/script.js" defer></script>
 </body>
 </html>

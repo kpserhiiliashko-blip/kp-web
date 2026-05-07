@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Netlify CMS — Редактор</title>
+    <title>Sveltia CMS</title>
     <style>
       body {
         font-family:
@@ -48,19 +48,19 @@
     </style>
   </head>
   <body>
-    <!-- <div id="cms-root"></div> -->
-    <a
-      href="/"
-      style="
-        text-decoration: underline;
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
-        z-index: 1000;
-        color: #0066cc;
-      "
-      >Повернутися на сайт</a
-    >
     <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <script>
+      const home = document.body.appendChild(document.createElement('a'));
+      Object.assign(home.style, {
+        textDecoration: 'underline',
+        position: 'fixed',
+        bottom: '1rem',
+        left: '1rem',
+        zIndex: 1000,
+        color: '#0066cc',
+      });
+      home.href = window.location.origin;
+      home.textContent = 'Повернутися на сайт';
+    </script>
   </body>
 </html>

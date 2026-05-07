@@ -9,18 +9,23 @@ permalink: /documents/
     <h1>Документи та звіти</h1>
 
     <div class="documents-list">
-      {% for document in documents %}
+      {% for document in collections.documents %}
       <div class="document-item">
-        <div class="document-icon">{{ document.icon }}</div>
+        <div class="document-icon">{{ document.data.emoji }}</div>
         <div class="document-content">
-          <h3>{{ document.name }}</h3>
-          <p>{{ document.description }}</p>
-          <a href="{{ document.file }}" class="document-link" target="_blank"
+          <h3>{{ document.data.title }}</h3>
+          {{ document.templateContent | truncate(100) | safe }}
+          <a
+            href="{{ config.baseURL }}{{ document.data.file }}"
+            class="document-link"
+            target="_blank"
             >Завантажити</a
           >
         </div>
       </div>
-      {% endfor %}
+      {% endfor %} {% if collections.documents.length == 0 %}
+      <p class="empty-state">Документи відсутні.</p>
+      {% endif %}
     </div>
     <div class="info-box">
       <h3>Запит на додаткові документи</h3>
