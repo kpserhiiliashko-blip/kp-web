@@ -4,8 +4,8 @@ backend:
   branch: main
 editor:
   preview: false
-media_folder: '/assets/uploads'
-public_folder: '/assets/uploads'
+media_folder: 'assets/uploads'
+public_folder: 'assets/uploads'
 site_url: https://kpserhiiliashko-blip.github.io/kp-web/
 
 collections:
@@ -38,12 +38,6 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     extension: 'md'
     fields:
-      - {
-          label: 'Layout',
-          name: 'layout',
-          widget: 'hidden',
-          default: 'document.njk',
-        }
       - { label: 'Назва', name: 'title', widget: 'string' }
       - { label: 'Опис', name: 'body' }
       - label: 'Тип / Емодзі'
