@@ -12,7 +12,7 @@ permalink: /documents/
       {% for document in collections.documents %}
       <div class="document-item">
         <div class="document-icon">{{ document.data.emoji }}</div>
-        <div class="document-content">
+        <div class="document-card-content">
           <h3>{{ document.data.title }}</h3>
           {{ document.templateContent | truncate(100) | safe }}
           <a

@@ -6,7 +6,7 @@ export default defineConfig((eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('admin');
 
   // Додаємо фільтр для дати
-  eleventyConfig.addFilter('dateFilter', function (dateObj) {
+  eleventyConfig.addFilter('ukDateFormat', function (dateObj) {
     const date = new Date(dateObj);
     return date.toLocaleDateString('uk-UA', {
       year: 'numeric',

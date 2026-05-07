@@ -1,9 +1,9 @@
-// burger menu
-var navBurger = document.querySelector('.nav-burger');
-var navList = document.querySelector('.nav-list');
+// nav burger
+const navBurger = document.querySelector('.nav-burger');
+const navList = document.querySelector('.nav-list');
 if (navBurger && navList) {
   navBurger.addEventListener('click', function () {
-    var expanded = navBurger.getAttribute('aria-expanded') === 'true';
+    const expanded = navBurger.getAttribute('aria-expanded') === 'true';
     navBurger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     navList.classList.toggle('is-open');
   });
@@ -24,19 +24,19 @@ if (navBurger && navList) {
 }
 
 // redirect gh Oauth token to CMS admin interface
-var isOnAdminRoute = window.location.pathname.indexOf('/admin') === 0;
+const isOnAdminRoute = window.location.pathname.indexOf('/admin') === 0;
 
 function extractIdentityToken(query, hash) {
-  var pattern =
+  const pattern =
     /(invite_token|confirmation_token|recovery_token|email_change_token)=/;
   if (!pattern.test(query) && !pattern.test(hash)) return null;
 
-  var source = query && query !== '?' ? query : hash || '';
+  const source = query && query !== '?' ? query : hash || '';
   return source ? source.substring(1) : '';
 }
 
 if (!isOnAdminRoute) {
-  var token = extractIdentityToken(
+  const token = extractIdentityToken(
     window.location.search,
     window.location.hash,
   );

@@ -11,7 +11,7 @@ permalink: /news/
     <div class="news-list">
       {% for post in collections.news %}
       <article class="news-item">
-        <div class="news-date">{{ post.data.date | dateFilter }}</div>
+        <div class="news-date">{{ post.data.date | ukDateFormat }}</div>
         <h2>
           <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
         </h2>
