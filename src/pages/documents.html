@@ -4,16 +4,18 @@ title: Документи
 permalink: /documents/
 ---
 
-<section class="section">
+<section class="section" aria-label="Ділові документи">
   <div class="container">
     <h1>Документи та звіти</h1>
 
     <div class="documents-grid">
       {% for document in collections.documents %}
       <div class="document-card">
-        <div class="document-icon">{{ document.data.emoji }}</div>
+        <div class="document-icon" aria-hidden="true">
+          {{ document.data.emoji }}
+        </div>
         <div class="document-card-content">
-          <h3>{{ document.data.title }}</h3>
+          <h2>{{ document.data.title }}</h2>
           {{ document.templateContent | truncate(100) | safe }}
           <a
             href="{{ config.baseURL }}{{ document.data.file }}"

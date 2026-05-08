@@ -4,7 +4,7 @@ title: Новини
 permalink: /news/
 ---
 
-<section class="section">
+<section class="section" aria-label="Стрічка новин">
   <div class="container">
     <h1>Новини та оголошення</h1>
 
@@ -12,14 +12,17 @@ permalink: /news/
       {% for post in collections.news %}
       <article class="news-item">
         <div class="news-date">{{ post.data.date | dmyDateFormat }}</div>
-        <h3>
+        <h2>
           <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
-        </h3>
+        </h2>
         <p class="news-excerpt">
           {{ (post.data.excerpt or post.templateContent) | truncate(200) | safe
           }}
         </p>
-        <a href="{{ config.baseURL }}{{ post.url }}" class="read-more"
+        <a
+          href="{{ config.baseURL }}{{ post.url }}"
+          aria-label="Читати новину: {{ post.data.title }}"
+          class="read-more"
           >Читати далі →</a
         >
       </article>

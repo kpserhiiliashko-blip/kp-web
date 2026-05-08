@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero" aria-label="Головна інформація">
   <div class="container">
     <div class="hero-content">
       <h1>{{ org.name }}</h1>
@@ -29,13 +29,13 @@ eleventyNavigation:
 </section>
 
 <!-- Services Section -->
-<section class="section">
+<section class="section" aria-label="Наші послуги">
   <div class="container">
     <h2>Наші послуги</h2>
     <div class="services-grid">
       {% for service in services.items %}
       <div class="service-card">
-        <div class="service-icon">{{ service.icon }}</div>
+        <div class="service-icon" aria-hidden="true">{{ service.icon }}</div>
         <div>
           <h3>{{ service.name }}</h3>
           <p>{{ service.description }}</p>
@@ -47,12 +47,14 @@ eleventyNavigation:
 </section>
 
 <!-- CTA Section -->
-<section class="section bg-light">
+<section class="section bg-light" aria-label="Зв'язатися з нами">
   <div class="container">
-    <h2>Потребуєте допомоги?</h2>
-    <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>
-    <a href="{{ config.routes.contacts }}" class="btn btn-primary"
-      >Подати звернення</a
-    >
+    <div class="cta-content">
+      <h2>Потребуєте допомоги?</h2>
+      <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>
+      <a href="{{ config.routes.contacts }}" class="btn btn-primary"
+        >Подати звернення</a
+      >
+    </div>
   </div>
 </section>

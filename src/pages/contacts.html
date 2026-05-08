@@ -4,7 +4,7 @@ title: Контакти
 permalink: /contacts/
 ---
 
-<section class="section">
+<section class="section" aria-label="Зв'язок з нами">
   <div class="container">
     <h1>Зв'яжіться з нами</h1>
     <p class="page-intro">
@@ -20,16 +20,20 @@ permalink: /contacts/
       <p class="small">Гаряча лінія для консультацій та аварійних викликів.</p>
     </div>
 
-    <section class="section-inner">
+    <section class="section-inner" aria-label="Аварійні ситуації">
       <h2>Аварійні ситуації</h2>
       <div class="alert">
         <p><strong>У разі аварії (витік, відсутність води):</strong></p>
-        <p class="phone-urgent">☎️ {{ org.phone }}</p>
+        <p class="phone-urgent">
+          <a href="tel:{{ org.phone }}"
+            ><span aria-hidden="true">☎️</span> {{ org.phone }}</a
+          >
+        </p>
         <p>Служба аварійної допомоги працює цілодобово</p>
       </div>
     </section>
 
-    <section class="section-inner">
+    <section class="section-inner" aria-label="Інші способи зв'язку">
       <h2>Інші способи зв'язку</h2>
       <div class="contact-list">
         <article class="contact-row">
@@ -54,7 +58,7 @@ permalink: /contacts/
       </div>
     </section>
 
-    <section class="section-inner">
+    <section class="section-inner" aria-label="Поширені питання">
       <h2>Поширені питання</h2>
       <div class="faq">
         <div class="faq-item">

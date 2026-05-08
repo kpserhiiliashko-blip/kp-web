@@ -38,6 +38,12 @@ body {
   background-color: var(--bg-color);
 }
 
+:focus-visible {
+  width: fit-content;
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 /* ==================== Typography ==================== */
 h1,
 h2,
@@ -127,6 +133,10 @@ main {
   border: 1px solid var(--border-color);
 }
 
+.section-inner h2 {
+  margin-top: 0;
+}
+
 .bg-light {
   background-color: var(--secondary-color);
 }
@@ -185,6 +195,7 @@ main {
 
 .nav-burger {
   display: none;
+  cursor: pointer;
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   border-radius: 6px;
@@ -220,10 +231,18 @@ main {
   min-height: calc(100vh - 79px);
   color: white;
   padding: calc(var(--spacing-unit) * 1) 0;
+  display: grid;
 }
 
 .hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
+  place-items: center;
+  place-content: center;
+  gap: calc(var(--gap-size) * 3);
 }
 
 .hero-content h1 {
@@ -243,8 +262,6 @@ main {
   margin-bottom: calc(var(--spacing-unit) * 4);
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero-actions {
@@ -315,7 +332,6 @@ main {
 .service-icon {
   font-size: 32px;
   text-align: center;
-  margin-bottom: calc(var(--spacing-unit) * 1);
   display: block;
 }
 
@@ -378,6 +394,10 @@ tr:hover {
   border: 1px solid var(--border-color);
 }
 
+.tariff-section h2 {
+  margin-top: 0;
+}
+
 /* ==================== Documents & Files ==================== */
 .documents-grid {
   display: grid;
@@ -412,7 +432,7 @@ tr:hover {
   text-align: center;
 }
 
-.document-card-content h3 {
+.document-card-content h2 {
   margin-top: 0;
 }
 
@@ -476,7 +496,7 @@ tr:hover {
   margin-bottom: 0;
 }
 
-.phone-urgent {
+.phone-urgent a {
   font-size: 24px;
   font-weight: bold;
   color: var(--warning-color);
@@ -610,10 +630,6 @@ tr:hover {
   margin-top: 0;
 }
 
-.info-box ul {
-  margin-left: calc(var(--spacing-unit) * 3);
-}
-
 .info-text {
   color: var(--text-light);
   font-style: italic;
@@ -655,17 +671,17 @@ tr:hover {
   color: #aaa;
 }
 
-.footer-nav {
+.footer-nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.footer-nav li {
+.footer-nav-list li {
   margin-bottom: calc(var(--spacing-unit) * 0.5);
 }
 
-.footer-nav a {
+.footer-nav-list a {
   font-size: 14px;
 }
 
@@ -723,6 +739,7 @@ tr:hover {
 
   .btn {
     width: 100%;
+    height: fit-content;
     text-align: center;
   }
 
@@ -734,10 +751,6 @@ tr:hover {
   .tariff-section {
     width: 100%;
     flex: 1 1 auto;
-  }
-
-  .section-inner {
-    margin-top: calc(var(--spacing-unit) * 3);
   }
 
   .footer-content {
@@ -835,4 +848,9 @@ tr:hover {
     color: var(--primary-color);
     text-decoration: underline;
   }
+}
+
+/* ==================== CTA section ==================== */
+.cta-content h2 {
+  margin-top: 0;
 }

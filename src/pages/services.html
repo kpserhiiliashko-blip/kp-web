@@ -4,16 +4,16 @@ title: Послуги
 permalink: /services/
 ---
 
-<section class="section">
+<section class="section" aria-label="Послуги">
   <div class="container">
     <h1>Наші послуги</h1>
 
     <div class="services-grid">
       {% for service in services.items %}
       <div class="service-card">
-        <div class="service-icon">{{ service.icon }}</div>
+        <div class="service-icon" aria-hidden="true">{{ service.icon }}</div>
         <div>
-          <h3>{{ service.name }}</h3>
+          <h2>{{ service.name }}</h2>
           <p>{{ service.description }}</p>
         </div>
       </div>

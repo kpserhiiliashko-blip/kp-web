@@ -1,71 +1,102 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} - {{ org.name }}</title>
-    <link rel="stylesheet" href="{{ config.baseURL }}/assets/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="{{ config.baseURL }}/assets/style.css" />
+  </head>
+
+  <body>
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="{{ config.routes.home }}" class="logo-link">
-                    <div class="logo">
-                        <h1>{{ org.name }}</h1>
-                        <p class="tagline">{{ org.tagline }}</p>
-                    </div>
-                </a>
-                <button class="nav-burger" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Відкрити меню">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <nav class="nav">
-                    <ul class="nav-list" id="main-nav">
-                        {% for navigation in navigation.items %}
-                        <li><a href="{{ navigation.url }}">{{ navigation.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </nav>
+      <div class="container">
+        <div class="header-content">
+
+          <a href="{{ config.routes.home }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
+            <div class="logo">
+              <h1>{{ org.name }}</h1>
+              <p class="tagline">{{ org.tagline }}</p>
             </div>
+          </a>
+
+          <button
+            class="nav-burger"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Відкрити меню"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+
+          <nav class="nav" aria-label="Головна навігація">
+            <ul class="nav-list" id="main-nav">
+              {% for navigation in navigation.items %}
+                <li>
+                  <a href="{{ navigation.url }}">{{ navigation.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+
         </div>
+      </div>
     </header>
 
     <main>
-        {{ content | safe }}
+      {{ content | safe }}
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>{{ org.name }}</h3>
-                    <p>{{ org.description }}</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Контакти</h3>
-                    <p>Телефон: <a href="tel:{{ org.phone }}">{{ org.phone }}</a></p>
-                    <p>Email: <a href="mailto:{{ org.email }}">{{ org.email }}</a></p>
-                    <p>{{ org.address }}</p>
-                    <p>{{ org.hours }}</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Навігація</h3>
-                    <ul class="footer-nav">
-                        {% for navigation in navigation.items %}
-                        <li><a href="{{ navigation.url }}">{{ navigation.title }}</a></li>
-                        {% endfor %}
-                        <li><a href="{{ config.routes.admin }}">Адміністратору</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 {{ org.name }}. Всі права захищені.</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+
+          <div class="footer-section">
+            <h3>{{ org.name }}</h3>
+            <p>{{ org.description }}</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Контакти</h3>
+            <p>
+              Телефон:
+              <a href="tel:{{ org.phone }}">{{ org.phone }}</a>
+            </p>
+            <p>
+              Email:
+              <a href="mailto:{{ org.email }}">{{ org.email }}</a>
+            </p>
+            <p>{{ org.address }}</p>
+            <p>{{ org.hours }}</p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Навігація</h3>
+            <nav aria-label="Футер навігація">
+              <ul class="footer-nav-list">
+                {% for navigation in navigation.items %}
+                  <li>
+                    <a href="{{ navigation.url }}">{{ navigation.title }}</a>
+                  </li>
+                {% endfor %}
+                <li>
+                  <a href="{{ config.routes.admin }}">Адміністратору</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
         </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 | З повагою, {{ org.name }}!</p>
+        </div>
+
+      </div>
     </footer>
 
     <script src="{{ config.baseURL }}/assets/script.js" defer></script>
-</body>
+  </body>
 </html>
