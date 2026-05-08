@@ -11,9 +11,11 @@ permalink: /services/
     <div class="services-grid">
       {% for service in services.items %}
       <div class="service-card">
-        <div class="service-icon large">{{ service.icon }}</div>
-        <h2>{{ service.name }}</h2>
-        <p>{{ service.description }}</p>
+        <div class="service-icon">{{ service.icon }}</div>
+        <div>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
       </div>
       {% endfor %}
     </div>

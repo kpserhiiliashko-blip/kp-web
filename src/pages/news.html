@@ -11,10 +11,10 @@ permalink: /news/
     <div class="news-list">
       {% for post in collections.news %}
       <article class="news-item">
-        <div class="news-date">{{ post.data.date | ukDateFormat }}</div>
-        <h2>
+        <div class="news-date">{{ post.data.date | dmyDateFormat }}</div>
+        <h3>
           <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
-        </h2>
+        </h3>
         <p class="news-excerpt">
           {{ (post.data.excerpt or post.templateContent) | truncate(200) | safe
           }}
@@ -26,7 +26,7 @@ permalink: /news/
       {% endfor %}
     </div>
 
-    <div class="news-admin-note">
+    <div>
       <p>
         Щоб додати або відредагувати новину, перейдіть до
         <a href="{{ config.routes.admin }}">Редактору новин</a>.

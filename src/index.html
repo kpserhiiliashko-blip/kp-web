@@ -29,15 +29,17 @@ eleventyNavigation:
 </section>
 
 <!-- Services Section -->
-<section class="services section">
+<section class="section">
   <div class="container">
     <h2>Наші послуги</h2>
     <div class="services-grid">
       {% for service in services.items %}
       <div class="service-card">
         <div class="service-icon">{{ service.icon }}</div>
-        <h3>{{ service.name }}</h3>
-        <p>{{ service.description }}</p>
+        <div>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
       </div>
       {% endfor %}
     </div>
@@ -45,7 +47,7 @@ eleventyNavigation:
 </section>
 
 <!-- CTA Section -->
-<section class="cta section bg-light">
+<section class="section bg-light">
   <div class="container">
     <h2>Потребуєте допомоги?</h2>
     <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>

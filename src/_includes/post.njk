@@ -6,7 +6,7 @@ layout: app.njk
     <div class="container">
         <header class="post-header">
             <h1>{{ title }}</h1>
-            <p class="post-date">{{ date | ukDateFormat }}</p>
+            <p class="post-date">{{ date | dmyDateFormat }}</p>
         </header>
         <div class="post-content">
             {{ content | safe }}

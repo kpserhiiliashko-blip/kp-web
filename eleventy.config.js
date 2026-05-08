@@ -1,12 +1,11 @@
 import { defineConfig } from '11ty.ts';
 
 export default defineConfig((eleventyConfig) => {
-  // Копіюємо assets та admin папки в output
+  // Include dirs in the final output build
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('admin');
 
-  // Додаємо фільтр для дати
-  eleventyConfig.addFilter('ukDateFormat', function (dateObj) {
+  eleventyConfig.addFilter('dmyDateFormat', function (dateObj) {
     const date = new Date(dateObj);
     return date.toLocaleDateString('uk-UA', {
       year: 'numeric',
@@ -15,21 +14,12 @@ export default defineConfig((eleventyConfig) => {
     });
   });
 
-  // Додаємо фільтр для сортування по даті
-  eleventyConfig.addFilter('sortByDate', function (collection) {
-    if (!collection) return [];
-    return collection.sort(
-      (a, b) => new Date(b.data.date) - new Date(a.data.date),
-    );
-  });
-
-  // Додаємо колекцію для новин
+  // hang out with data collections
   eleventyConfig.addCollection('news', function (collectionApi) {
     return collectionApi
       .getFilteredByGlob('src/news/**/*.md')
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
-
   eleventyConfig.addCollection('documents', function (collectionApi) {
     return collectionApi
       .getFilteredByGlob('src/documents/**/*.md')

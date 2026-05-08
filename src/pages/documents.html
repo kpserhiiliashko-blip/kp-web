@@ -8,9 +8,9 @@ permalink: /documents/
   <div class="container">
     <h1>Документи та звіти</h1>
 
-    <div class="documents-list">
+    <div class="documents-grid">
       {% for document in collections.documents %}
-      <div class="document-item">
+      <div class="document-card">
         <div class="document-icon">{{ document.data.emoji }}</div>
         <div class="document-card-content">
           <h3>{{ document.data.title }}</h3>
