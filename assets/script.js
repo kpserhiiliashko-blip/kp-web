@@ -1,10 +1,15 @@
-// nav burger
+// header burger
 const navBurger = document.querySelector('.nav-burger');
 const navList = document.querySelector('.nav-list');
 if (navBurger && navList) {
   navBurger.addEventListener('click', function () {
     const expanded = navBurger.getAttribute('aria-expanded') === 'true';
     navBurger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    navBurger.setAttribute(
+      'aria-label',
+      expanded ? 'Відкрити меню' : 'Закрити меню',
+    );
+
     navList.classList.toggle('is-open');
   });
 

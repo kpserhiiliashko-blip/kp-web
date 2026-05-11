@@ -38,8 +38,9 @@ body {
   background-color: var(--bg-color);
 }
 
-:focus-visible {
-  width: fit-content;
+/* ==================== accessibility ==================== */
+
+*:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
@@ -157,7 +158,11 @@ main {
   padding: calc(var(--spacing-unit) * 2) 0;
 }
 
-.logo h1 {
+.logo-title {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
   margin: 0;
   color: var(--primary-color);
 }
@@ -175,11 +180,11 @@ main {
   opacity: 0.8;
 }
 
-.logo-link:hover h1 {
+.logo-link:hover p {
   color: var(--primary-dark);
 }
 
-.tagline {
+.logo-tagline {
   margin: 0;
   font-size: 14px;
   color: var(--text-light);
@@ -556,11 +561,11 @@ tr:hover {
   font-weight: 500;
 }
 
-.news-item h3 {
+.news-item h2 {
   margin: calc(var(--spacing-unit) * 1) 0;
 }
 
-.news-item h3 a:hover {
+.news-item h2 a:hover {
   text-decoration: none;
 }
 
@@ -798,7 +803,7 @@ tr:hover {
     padding: 0 calc(var(--spacing-unit) * 1.5);
   }
 
-  .tagline {
+  .logo-tagline {
     font-size: 13px;
   }
 
