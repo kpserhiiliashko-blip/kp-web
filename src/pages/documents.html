@@ -17,13 +17,18 @@ permalink: /documents/
         <div class="document-card-content">
           <h2>{{ document.data.title }}</h2>
           {{ document.templateContent | truncate(100) | safe }}
-          <a
-            href="{{ document.data.file | url }}"
-            class="document-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Завантажити</a
-          >
+          <div class="document-meta">
+            <span class="document-date"
+              >{{ document.date | dmyDateFormat }}</span
+            >
+            <a
+              href="{{ document.data.file | url }}"
+              class="document-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Завантажити</a
+            >
+          </div>
         </div>
       </div>
       {% endfor %} {% if collections.documents.length == 0 %}
