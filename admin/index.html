@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <script src="https://unpkg.com/@sveltia/cms@0.160.0/dist/sveltia-cms.js"></script>
     <script>
       const home = document.body.appendChild(document.createElement('a'));
       Object.assign(home.style, {
@@ -16,7 +16,9 @@
         zIndex: 1000,
         color: '#0066cc',
       });
-      home.href = window.location.origin;
+      const siteRoot =
+        window.location.pathname.replace(/\/admin\/.*$/, '/') || '/';
+      home.href = window.location.origin + siteRoot;
       home.textContent = 'Повернутися на сайт';
     </script>
   </body>
