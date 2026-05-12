@@ -9,12 +9,14 @@ permalink: /services/
     <h1>Наші послуги</h1>
 
     <div class="services-grid">
-      {% for service in services.items %}
+      {% for service in collections.services %}
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">{{ service.icon }}</div>
+        <div class="service-icon" aria-hidden="true">
+          {{ service.data.icon }}
+        </div>
         <div>
-          <h2>{{ service.name }}</h2>
-          <p>{{ service.description }}</p>
+          <h2>{{ service.data.name }}</h2>
+          <p>{{ service.data.description }}</p>
         </div>
       </div>
       {% endfor %}

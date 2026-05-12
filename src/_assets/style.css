@@ -376,7 +376,6 @@ tr:hover {
 .tariff-table td.price {
   font-weight: 600;
   color: var(--primary-color);
-  font-size: 18px;
 }
 
 .tariff-tables {

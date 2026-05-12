@@ -61,3 +61,37 @@ collections:
           - label: 'Чек ✅'
             value: '✅'
       - { label: 'Файл', name: 'file', widget: 'file' }
+  - name: 'services'
+    label: 'Послуги'
+    folder: 'src/services'
+    create: true
+    slug: '{{slug}}'
+    extension: 'md'
+    fields:
+      - { label: 'Назва', name: 'name', widget: 'string' }
+      - label: 'Іконка'
+        name: 'icon'
+        widget: 'select'
+        options:
+          - { label: '💧 Вода', value: '💧' }
+          - { label: '🔄 Циркуляція', value: '🔄' }
+          - { label: '♻️ Сміття', value: '♻️' }
+          - { label: '🚛 Асенізатор', value: '🚛' }
+          - { label: '🏢 Будинок', value: '🏢' }
+      - { label: 'Опис', name: 'description', widget: 'text' }
+  - name: 'tariffs'
+    label: 'Тарифи'
+    folder: 'src/tariffs'
+    create: true
+    slug: '{{slug}}'
+    extension: 'md'
+    fields:
+      - { label: 'Назва', name: 'name', widget: 'string' }
+      - { label: 'Ціна', name: 'price', widget: 'string' }
+      - { label: 'Одиниця', name: 'unit', widget: 'string' }
+      - label: 'Категорія'
+        name: 'category'
+        widget: 'select'
+        options:
+          - { label: 'Водопостачання та каналізація', value: 'water' }
+          - { label: 'Гаряча вода', value: 'hot' }

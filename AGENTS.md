@@ -22,18 +22,20 @@ src/
 │   ├── style.css
 │   ├── script.js
 │   └── uploads/
-├── _data/          # Global data: site.js (routes, navigation, org), services.js, tariffs.js
+├── _data/          # Global data: site.js (routes, navigation, org, tariffsUpdated)
 ├── _includes/      # Nunjucks layouts: app.njk (base), post.njk (news detail)
 ├── documents/      # Markdown, permalink: false (collection only, no pages)
 ├── news/           # Markdown with layout: post.njk, sorted by date desc
+├── services/       # Markdown, permalink: false (collection only)
+├── tariffs/        # Markdown, permalink: false (collection only)
 ├── pages/          # Static pages: contacts, documents, news, services, tariffs
 └── index.html      # Homepage
 ```
 
 - Data files are ESM (`*.js`), not JSON
 - Navigation is manual — adding a page means updating `src/_data/site.js` (routes + navigation in one file)
-- `site.js` uses `export default { routes, navigation, org }` — accessible in templates via `{{ site.routes.* }}`, `{{ site.org.* }}`, `{{ site.navigation.* }}`. Template loop variables (`{% for navigation in site.navigation.items %}` → inner `{{ navigation.url }}`) shadow the outer `site.navigation`.
-- `documents.11tydata.js` sets `permalink: false` — documents are collection-only, no rendered pages
+- `site.js` uses `export default { routes, navigation, org, tariffsUpdated }` — accessible in templates via `{{ site.routes.* }}`, `{{ site.org.* }}`, `{{ site.navigation.* }}`, `{{ site.tariffsUpdated }}`. Template loop variables (`{% for navigation in site.navigation.items %}` → inner `{{ navigation.url }}`) shadow the outer `site.navigation`.
+- `documents.11tydata.js`, `services.11tydata.js`, `tariffs.11tydata.js` set `permalink: false` — collections only, no rendered pages
 - `eleventy.config.js` uses `11ty.ts` for type hints only; its `defineConfig` is a no-op
 
 ## Key quirks
@@ -52,3 +54,5 @@ Collections managed via Sveltia CMS at `/admin/`:
 
 - **news** (`src/news/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`
 - **documents** (`src/documents/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`, not rendered as pages
+- **services** (`src/services/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, icon, description
+- **tariffs** (`src/tariffs/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, price, unit, category (water/hot)

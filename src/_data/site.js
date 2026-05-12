@@ -29,4 +29,6 @@ const org = {
   hours: 'Пн-Пт: 08:00-17:00, Сб: 09:00-13:00',
 };
 
-export default { routes, navigation, org };
+const tariffsUpdated = '2026-04-20';
+
+export default { routes, navigation, org, tariffsUpdated };

@@ -26,6 +26,23 @@ export default defineConfig((eleventyConfig) => {
       .getFilteredByGlob('src/documents/**/*.md')
       .sort((a, b) => a.data.title.localeCompare(b.data.title));
   });
+  eleventyConfig.addCollection('services', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('src/services/**/*.md')
+      .sort((a, b) => a.data.name.localeCompare(b.data.name));
+  });
+  eleventyConfig.addCollection('tariffsWater', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('src/tariffs/**/*.md')
+      .filter((t) => t.data.category === 'water')
+      .sort((a, b) => a.data.name.localeCompare(b.data.name));
+  });
+  eleventyConfig.addCollection('tariffsHot', function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob('src/tariffs/**/*.md')
+      .filter((t) => t.data.category === 'hot')
+      .sort((a, b) => a.data.name.localeCompare(b.data.name));
+  });
 
   return {
     dir: {

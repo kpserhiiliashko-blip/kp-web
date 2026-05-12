@@ -29,12 +29,14 @@ title: Головна
   <div class="container">
     <h2>Наші послуги</h2>
     <div class="services-grid">
-      {% for service in services.items %}
+      {% for service in collections.services %}
       <div class="service-card">
-        <div class="service-icon" aria-hidden="true">{{ service.icon }}</div>
+        <div class="service-icon" aria-hidden="true">
+          {{ service.data.icon }}
+        </div>
         <div>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.description }}</p>
+          <h3>{{ service.data.name }}</h3>
+          <p>{{ service.data.description }}</p>
         </div>
       </div>
       {% endfor %}

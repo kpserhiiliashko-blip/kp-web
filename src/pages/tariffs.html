@@ -9,7 +9,7 @@ permalink: /tariffs/
     <h1>Тарифи на услуги</h1>
     <p class="info-text">
       Актуальні тарифи на послуги відповідно до постанови міської ради від {{
-      tariffs.updated }}
+      site.tariffsUpdated }}
     </p>
 
     <div class="tariff-tables">
@@ -23,10 +23,12 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for tariff in tariffs.water %}
+            {% for tariff in collections.tariffsWater %}
             <tr>
-              <td>{{ tariff.name }}</td>
-              <td class="price">{{ tariff.price }} {{ tariff.unit }}</td>
+              <td>{{ tariff.data.name }}</td>
+              <td class="price">
+                {{ tariff.data.price }} {{ tariff.data.unit }}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
@@ -43,10 +45,12 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for tariff in tariffs.hot %}
+            {% for tariff in collections.tariffsHot %}
             <tr>
-              <td>{{ tariff.name }}</td>
-              <td class="price">{{ tariff.price }} {{ tariff.unit }}</td>
+              <td>{{ tariff.data.name }}</td>
+              <td class="price">
+                {{ tariff.data.price }} {{ tariff.data.unit }}
+              </td>
             </tr>
             {% endfor %}
           </tbody>
