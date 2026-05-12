@@ -15,7 +15,7 @@ permalink: /contacts/
     <div class="contact-primary">
       <h2>Основний канал звернення</h2>
       <p class="contact-info">
-        <a href="tel:{{ org.phone }}">{{ org.phone }}</a>
+        <a href="tel:{{ site.org.phone }}">{{ site.org.phone }}</a>
       </p>
       <p class="small">Гаряча лінія для консультацій та аварійних викликів.</p>
     </div>
@@ -25,8 +25,8 @@ permalink: /contacts/
       <div class="alert">
         <p><strong>У разі аварії (витік, відсутність води):</strong></p>
         <p class="phone-urgent">
-          <a href="tel:{{ org.phone }}"
-            ><span aria-hidden="true">☎️</span> {{ org.phone }}</a
+          <a href="tel:{{ site.org.phone }}"
+            ><span aria-hidden="true">☎️</span> {{ site.org.phone }}</a
           >
         </p>
         <p>Служба аварійної допомоги працює цілодобово</p>
@@ -39,20 +39,20 @@ permalink: /contacts/
         <article class="contact-row">
           <h3>Email</h3>
           <p class="contact-info">
-            <a href="mailto:{{ org.email }}">{{ org.email }}</a>
+            <a href="mailto:{{ site.org.email }}">{{ site.org.email }}</a>
           </p>
           <p class="small">Зазвичай відповідаємо протягом 24 годин.</p>
         </article>
 
         <article class="contact-row">
           <h3>Офіс</h3>
-          <p class="contact-info">{{ org.address }}</p>
+          <p class="contact-info">{{ site.org.address }}</p>
           <p class="small">Прийом громадян за графіком роботи підприємства.</p>
         </article>
 
         <article class="contact-row">
           <h3>Графік роботи</h3>
-          <p class="contact-info">{{ org.hours }}</p>
+          <p class="contact-info">{{ site.org.hours }}</p>
           <p class="small">Аварійна служба працює 24/7.</p>
         </article>
       </div>

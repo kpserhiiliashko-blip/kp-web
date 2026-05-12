@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }} - {{ org.name }}</title>
+    <title>{{ title }} - {{ site.org.name }}</title>
     <link rel="stylesheet" href="/assets/style.css" />
   </head>
 
@@ -12,10 +12,10 @@
       <div class="container">
         <div class="header-content">
 
-          <a href="{{ config.routes.home | url }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
+          <a href="{{ site.routes.home | url }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
             <div class="logo">
-              <p class="logo-title">{{ org.name }}</p>
-              <p class="logo-tagline">{{ org.tagline }}</p>
+              <p class="logo-title">{{ site.org.name }}</p>
+              <p class="logo-tagline">{{ site.org.tagline }}</p>
             </div>
           </a>
 
@@ -33,7 +33,7 @@
 
           <nav class="nav" aria-label="Головна навігація">
             <ul class="nav-list" id="main-nav">
-              {% for navigation in navigation.items %}
+              {% for navigation in site.navigation.items %}
                 <li>
                   <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
                 </li>
@@ -54,35 +54,35 @@
         <div class="footer-content">
 
           <div class="footer-section">
-            <h3>{{ org.name }}</h3>
-            <p>{{ org.description }}</p>
+            <h3>{{ site.org.name }}</h3>
+            <p>{{ site.org.description }}</p>
           </div>
 
           <div class="footer-section">
             <h3>Контакти</h3>
             <p>
               Телефон:
-              <a href="tel:{{ org.phone }}">{{ org.phone }}</a>
+              <a href="tel:{{ site.org.phone }}">{{ site.org.phone }}</a>
             </p>
             <p>
               Email:
-              <a href="mailto:{{ org.email }}">{{ org.email }}</a>
+              <a href="mailto:{{ site.org.email }}">{{ site.org.email }}</a>
             </p>
-            <p>{{ org.address }}</p>
-            <p>{{ org.hours }}</p>
+            <p>{{ site.org.address }}</p>
+            <p>{{ site.org.hours }}</p>
           </div>
 
           <div class="footer-section">
             <h3>Навігація</h3>
             <nav aria-label="Футер навігація">
               <ul class="footer-nav-list">
-                {% for navigation in navigation.items %}
+                {% for navigation in site.navigation.items %}
                   <li>
                     <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
                   </li>
                 {% endfor %}
                 <li>
-                  <a href="{{ config.routes.admin | url }}">Адміністратору</a>
+                  <a href="{{ site.routes.admin | url }}">Адміністратору</a>
                 </li>
               </ul>
             </nav>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 | З повагою, {{ org.name }}!</p>
+          <p>&copy; 2026 | З повагою, {{ site.org.name }}!</p>
         </div>
 
       </div>

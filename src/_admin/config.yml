@@ -4,7 +4,7 @@ backend:
   branch: main
 editor:
   preview: false
-media_folder: 'assets/uploads'
+media_folder: 'src/_assets/uploads'
 public_folder: 'assets/uploads'
 site_url: https://kpserhiiliashko-blip.github.io/kp-web/
 

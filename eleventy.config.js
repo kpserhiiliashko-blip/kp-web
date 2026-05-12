@@ -2,8 +2,9 @@ import { defineConfig } from '11ty.ts';
 
 export default defineConfig((eleventyConfig) => {
   // Include dirs in the final output build
-  eleventyConfig.addPassthroughCopy('assets');
-  eleventyConfig.addPassthroughCopy('admin');
+  eleventyConfig.addPassthroughCopy({ 'src/_assets': 'assets' });
+  eleventyConfig.addPassthroughCopy({ 'src/_admin': 'admin' });
+  eleventyConfig.ignores.add('src/_admin/**');
 
   eleventyConfig.addFilter('dmyDateFormat', function (dateObj) {
     const date = new Date(dateObj);

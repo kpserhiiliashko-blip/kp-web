@@ -32,14 +32,14 @@ permalink: /news/
     <div>
       <p>
         Щоб додати або відредагувати новину, перейдіть до
-        <a href="{{ config.routes.admin | url }}">Редактору новин</a>.
+        <a href="{{ site.routes.admin | url }}">Редактору новин</a>.
       </p>
     </div>
 
     {% if collections.news.length == 0 %}
     <p class="empty-state">
       Новини відсутні. Якщо вам є що повідомити, звертайтесь за
-      <a href="mailto:{{ org.email }}">адресою</a>.
+      <a href="mailto:{{ site.org.email }}">адресою</a>.
     </p>
     {% endif %}
   </div>

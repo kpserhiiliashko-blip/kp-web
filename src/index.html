@@ -6,18 +6,18 @@ title: Головна
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>{{ org.name }}</h1>
-      <p class="hero-subtitle">{{ org.description }}</p>
+      <h1>{{ site.org.name }}</h1>
+      <p class="hero-subtitle">{{ site.org.description }}</p>
       <p class="hero-text">
         Надаємо комунальні послуги для жителів громади м. Порожньоо: постачання
         води, водовідведення, вивезення ТПВ, викачування септиків та управління
         багатоквартирними будинками.
       </p>
       <div class="hero-actions">
-        <a href="{{ config.routes.contacts | url }}" class="btn btn-primary"
+        <a href="{{ site.routes.contacts | url }}" class="btn btn-primary"
           >Зв'язатися з нами</a
         >
-        <a href="{{ config.routes.tariffs | url }}" class="btn btn-secondary"
+        <a href="{{ site.routes.tariffs | url }}" class="btn btn-secondary"
           >Переглянути тарифи</a
         >
       </div>
@@ -47,7 +47,7 @@ title: Головна
     <div class="cta-content">
       <h2>Потребуєте допомоги?</h2>
       <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>
-      <a href="{{ config.routes.contacts | url }}" class="btn btn-primary"
+      <a href="{{ site.routes.contacts | url }}" class="btn btn-primary"
         >Подати звернення</a
       >
     </div>
