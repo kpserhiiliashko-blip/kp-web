@@ -13,14 +13,14 @@ permalink: /news/
       <article class="news-item">
         <div class="news-date">{{ post.data.date | dmyDateFormat }}</div>
         <h2>
-          <a href="{{ config.baseURL }}{{ post.url }}">{{ post.data.title }}</a>
+          <a href="{{ post.url | url }}">{{ post.data.title }}</a>
         </h2>
         <p class="news-excerpt">
           {{ (post.data.excerpt or post.templateContent) | truncate(200) | safe
           }}
         </p>
         <a
-          href="{{ config.baseURL }}{{ post.url }}"
+          href="{{ post.url | url }}"
           aria-label="Читати новину: {{ post.data.title }}"
           class="read-more"
           >Читати далі →</a
@@ -32,7 +32,7 @@ permalink: /news/
     <div>
       <p>
         Щоб додати або відредагувати новину, перейдіть до
-        <a href="{{ config.routes.admin }}">Редактору новин</a>.
+        <a href="{{ config.routes.admin | url }}">Редактору новин</a>.
       </p>
     </div>
 

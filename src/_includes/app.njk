@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} - {{ org.name }}</title>
-    <link rel="stylesheet" href="{{ config.baseURL }}/assets/style.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
   </head>
 
   <body>
@@ -12,7 +12,7 @@
       <div class="container">
         <div class="header-content">
 
-          <a href="{{ config.routes.home }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
+          <a href="{{ config.routes.home | url }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
             <div class="logo">
               <p class="logo-title">{{ org.name }}</p>
               <p class="logo-tagline">{{ org.tagline }}</p>
@@ -35,7 +35,7 @@
             <ul class="nav-list" id="main-nav">
               {% for navigation in navigation.items %}
                 <li>
-                  <a href="{{ navigation.url }}">{{ navigation.title }}</a>
+                  <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -78,11 +78,11 @@
               <ul class="footer-nav-list">
                 {% for navigation in navigation.items %}
                   <li>
-                    <a href="{{ navigation.url }}">{{ navigation.title }}</a>
+                    <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
                   </li>
                 {% endfor %}
                 <li>
-                  <a href="{{ config.routes.admin }}">Адміністратору</a>
+                  <a href="{{ config.routes.admin | url }}">Адміністратору</a>
                 </li>
               </ul>
             </nav>
@@ -97,6 +97,6 @@
       </div>
     </footer>
 
-    <script src="{{ config.baseURL }}/assets/script.js" defer></script>
+        <script src="assets/script.js" defer></script>
   </body>
 </html>

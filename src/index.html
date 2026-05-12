@@ -16,10 +16,10 @@ eleventyNavigation:
         багатоквартирними будинками.
       </p>
       <div class="hero-actions">
-        <a href="{{ config.routes.contacts }}" class="btn btn-primary"
+        <a href="{{ config.routes.contacts | url }}" class="btn btn-primary"
           >Зв'язатися з нами</a
         >
-        <a href="{{ config.routes.tariffs }}" class="btn btn-secondary"
+        <a href="{{ config.routes.tariffs | url }}" class="btn btn-secondary"
           >Переглянути тарифи</a
         >
       </div>
@@ -49,7 +49,7 @@ eleventyNavigation:
     <div class="cta-content">
       <h2>Потребуєте допомоги?</h2>
       <p>Звертайтесь до нас будь-якого часу. Ми завжди готові допомогти.</p>
-      <a href="{{ config.routes.contacts }}" class="btn btn-primary"
+      <a href="{{ config.routes.contacts | url }}" class="btn btn-primary"
         >Подати звернення</a
       >
     </div>

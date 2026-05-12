@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
-    "format": "prettier --write **/*.{js,json,css,md,html}",
-    "dev": "npm run build && npm run start",
-    "prepare": "husky"
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/kp-web/",
+    "start:prod": "npm run build-ghpages && npx serve _site",
+    "start:dev": "npx @11ty/eleventy && npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "",
