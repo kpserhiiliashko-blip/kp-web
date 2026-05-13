@@ -8,6 +8,7 @@ permalink: /tariffs/
 <section class="section">
   <div class="container">
     <h1>Тарифи на услуги</h1>
+
     {% set latestDate = collections.tariffs | sort(false, false, "data.date") |
     last %}
     <p class="info-text">
@@ -38,7 +39,6 @@ permalink: /tariffs/
           </tbody>
         </table>
       </div>
-
       <div class="tariff-section">
         <h2>Гаряча вода</h2>
         <table class="tariff-table">

@@ -13,13 +13,17 @@ permalink: /contacts/
       одразу на гарячу лінію.
     </p>
 
-    <div class="contact-primary">
-      <h2>Основний канал звернення</h2>
-      <p class="contact-info">
-        <a href="tel:{{ site.org.phone }}">{{ site.org.phone }}</a>
-      </p>
-      <p class="small">Гаряча лінія для консультацій та аварійних викликів.</p>
-    </div>
+    <section>
+      <div class="contact-primary">
+        <h2>Основний канал звернення</h2>
+        <p class="contact-info">
+          <a href="tel:{{ site.org.phone }}">{{ site.org.phone }}</a>
+        </p>
+        <p class="small">
+          Гаряча лінія для консультацій та аварійних викликів.
+        </p>
+      </div>
+    </section>
 
     <section class="section-inner">
       <h2>Аварійні ситуації</h2>
@@ -44,13 +48,11 @@ permalink: /contacts/
           </p>
           <p class="small">Зазвичай відповідаємо протягом 24 годин.</p>
         </article>
-
         <article class="contact-row">
           <h3>Офіс</h3>
           <p class="contact-info">{{ site.org.address }}</p>
           <p class="small">Прийом громадян за графіком роботи підприємства.</p>
         </article>
-
         <article class="contact-row">
           <h3>Графік роботи</h3>
           <p class="contact-info">{{ site.org.hours }}</p>
