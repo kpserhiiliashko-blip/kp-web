@@ -11,7 +11,7 @@ site_url: https://kpserhiiliashko-blip.github.io/kp-web/
 collections:
   - name: 'news'
     label: 'Новини'
-    folder: 'src/news'
+    folder: 'src/content/news'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     extension: 'md'
@@ -33,7 +33,7 @@ collections:
       - { label: 'Текст', name: 'body', widget: 'markdown' }
   - name: 'documents'
     label: 'Документи'
-    folder: 'src/documents'
+    folder: 'src/content/documents'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     extension: 'md'
@@ -63,7 +63,7 @@ collections:
       - { label: 'Файл', name: 'file', widget: 'file' }
   - name: 'services'
     label: 'Послуги'
-    folder: 'src/services'
+    folder: 'src/content/services'
     create: true
     slug: '{{slug}}'
     extension: 'md'
@@ -81,7 +81,7 @@ collections:
       - { label: 'Опис', name: 'description', widget: 'text' }
   - name: 'tariffs'
     label: 'Тарифи'
-    folder: 'src/tariffs'
+    folder: 'src/content/tariffs'
     create: true
     slug: '{{slug}}'
     extension: 'md'

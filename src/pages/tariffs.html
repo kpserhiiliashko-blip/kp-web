@@ -23,14 +23,15 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for tariff in collections.tariffsWater %}
+            {% for tariff in collections.tariffs %} {% if tariff.data.category
+            == 'water' %}
             <tr>
               <td>{{ tariff.data.name }}</td>
               <td class="price">
                 {{ tariff.data.price }} {{ tariff.data.unit }}
               </td>
             </tr>
-            {% endfor %}
+            {% endif %} {% endfor %}
           </tbody>
         </table>
       </div>
@@ -45,14 +46,15 @@ permalink: /tariffs/
             </tr>
           </thead>
           <tbody>
-            {% for tariff in collections.tariffsHot %}
+            {% for tariff in collections.tariffs %} {% if tariff.data.category
+            == 'hot' %}
             <tr>
               <td>{{ tariff.data.name }}</td>
               <td class="price">
                 {{ tariff.data.price }} {{ tariff.data.unit }}
               </td>
             </tr>
-            {% endfor %}
+            {% endif %} {% endfor %}
           </tbody>
         </table>
       </div>

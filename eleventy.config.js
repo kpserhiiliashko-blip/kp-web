@@ -18,29 +18,22 @@ export default defineConfig((eleventyConfig) => {
   // hang out with data collections
   eleventyConfig.addCollection('news', function (collectionApi) {
     return collectionApi
-      .getFilteredByGlob('src/news/**/*.md')
+      .getFilteredByGlob('src/content/news/**/*.md')
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
   eleventyConfig.addCollection('documents', function (collectionApi) {
     return collectionApi
-      .getFilteredByGlob('src/documents/**/*.md')
+      .getFilteredByGlob('src/content/documents/**/*.md')
       .sort((a, b) => a.data.title.localeCompare(b.data.title));
   });
   eleventyConfig.addCollection('services', function (collectionApi) {
     return collectionApi
-      .getFilteredByGlob('src/services/**/*.md')
+      .getFilteredByGlob('src/content/services/**/*.md')
       .sort((a, b) => a.data.name.localeCompare(b.data.name));
   });
-  eleventyConfig.addCollection('tariffsWater', function (collectionApi) {
+  eleventyConfig.addCollection('tariffs', function (collectionApi) {
     return collectionApi
-      .getFilteredByGlob('src/tariffs/**/*.md')
-      .filter((t) => t.data.category === 'water')
-      .sort((a, b) => a.data.name.localeCompare(b.data.name));
-  });
-  eleventyConfig.addCollection('tariffsHot', function (collectionApi) {
-    return collectionApi
-      .getFilteredByGlob('src/tariffs/**/*.md')
-      .filter((t) => t.data.category === 'hot')
+      .getFilteredByGlob('src/content/tariffs/**/*.md')
       .sort((a, b) => a.data.name.localeCompare(b.data.name));
   });
 

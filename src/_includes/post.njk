@@ -3,13 +3,11 @@ layout: app.njk
 ---
 
 <article class="post">
-    <div class="container">
-        <header class="post-header">
-            <h1>{{ title }}</h1>
-            <p class="post-date">{{ date | dmyDateFormat }}</p>
-        </header>
-        <div class="post-content">
-            {{ content | safe }}
-        </div>
-    </div>
+  <div class="container">
+    <header class="post-header">
+      <h1>{{ title }}</h1>
+      <p class="post-date">{{ date | dmyDateFormat }}</p>
+    </header>
+    <div class="post-content">{{ content | safe }}</div>
+  </div>
 </article>

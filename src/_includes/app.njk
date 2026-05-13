@@ -11,8 +11,11 @@
     <header class="header">
       <div class="container">
         <div class="header-content">
-
-          <a href="{{ site.routes.home | url }}" aria-label="Повернутись на домашню сторінку" class="logo-link">
+          <a
+            href="{{ site.routes.home | url }}"
+            aria-label="Повернутись на домашню сторінку"
+            class="logo-link"
+          >
             <div class="logo">
               <p class="logo-title">{{ site.org.name }}</p>
               <p class="logo-tagline">{{ site.org.tagline }}</p>
@@ -34,25 +37,21 @@
           <nav class="nav" aria-label="Головна навігація">
             <ul class="nav-list" id="main-nav">
               {% for navigation in site.navigation.items %}
-                <li>
-                  <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
-                </li>
+              <li>
+                <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
+              </li>
               {% endfor %}
             </ul>
           </nav>
-
         </div>
       </div>
     </header>
 
-    <main>
-      {{ content | safe }}
-    </main>
+    <main>{{ content | safe }}</main>
 
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-
           <div class="footer-section">
             <h3>{{ site.org.name }}</h3>
             <p>{{ site.org.description }}</p>
@@ -77,9 +76,11 @@
             <nav aria-label="Футер навігація">
               <ul class="footer-nav-list">
                 {% for navigation in site.navigation.items %}
-                  <li>
-                    <a href="{{ navigation.url | url }}">{{ navigation.title }}</a>
-                  </li>
+                <li>
+                  <a href="{{ navigation.url | url }}"
+                    >{{ navigation.title }}</a
+                  >
+                </li>
                 {% endfor %}
                 <li>
                   <a href="{{ site.routes.admin | url }}">Адміністратору</a>
@@ -87,16 +88,14 @@
               </ul>
             </nav>
           </div>
-
         </div>
 
         <div class="footer-bottom">
           <p>&copy; 2026 | З повагою, {{ site.org.name }}!</p>
         </div>
-
       </div>
     </footer>
 
-        <script src="{{ '/assets/script.js' | url }}" defer></script>
+    <script src="{{ '/assets/script.js' | url }}" defer></script>
   </body>
 </html>

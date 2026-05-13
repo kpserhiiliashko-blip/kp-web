@@ -24,10 +24,11 @@ src/
 │   └── uploads/
 ├── _data/          # Global data: site.js (routes, navigation, org, tariffsUpdated)
 ├── _includes/      # Nunjucks layouts: app.njk (base), post.njk (news detail)
-├── documents/      # Markdown, permalink: false (collection only, no pages)
-├── news/           # Markdown with layout: post.njk, sorted by date desc
-├── services/       # Markdown, permalink: false (collection only)
-├── tariffs/        # Markdown, permalink: false (collection only)
+├── content/        # CMS-managed content collections
+│   ├── documents/  #   Markdown, permalink: false (collection only, no pages)
+│   ├── news/       #   Markdown with layout: post.njk, sorted by date desc
+│   ├── services/   #   Markdown, permalink: false (collection only)
+│   └── tariffs/    #   Markdown, permalink: false (collection only)
 ├── pages/          # Static pages: contacts, documents, news, services, tariffs
 └── index.html      # Homepage
 ```
@@ -52,7 +53,7 @@ src/
 
 Collections managed via Sveltia CMS at `/admin/`:
 
-- **news** (`src/news/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`
-- **documents** (`src/documents/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`, not rendered as pages
-- **services** (`src/services/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, icon, description
-- **tariffs** (`src/tariffs/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, price, unit, category (water/hot)
+- **news** (`src/content/news/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`
+- **documents** (`src/content/documents/`) — slug pattern `{{year}}-{{month}}-{{day}}-{{slug}}`, not rendered as pages
+- **services** (`src/content/services/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, icon, description
+- **tariffs** (`src/content/tariffs/`) — slug pattern `{{slug}}`, not rendered as pages; fields: name, price, unit, category (water/hot)
