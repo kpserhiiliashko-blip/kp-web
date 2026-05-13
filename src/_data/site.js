@@ -1,3 +1,5 @@
+const meta = {};
+
 const routes = {
   home: '/',
   services: '/services/',
