@@ -6,6 +6,14 @@ export default defineConfig((eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/_admin': 'admin' });
   eleventyConfig.ignores.add('src/_admin/**');
 
+  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+
+  eleventyConfig.addFilter('isoDate', function (dateObj) {
+    if (!dateObj) return '';
+    const date = new Date(dateObj);
+    return date.toISOString().split('T')[0];
+  });
+
   eleventyConfig.addFilter('dmyDateFormat', function (dateObj) {
     const date = new Date(dateObj);
     return date.toLocaleDateString('uk-UA', {

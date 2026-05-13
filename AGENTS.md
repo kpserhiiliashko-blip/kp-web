@@ -2,12 +2,14 @@
 
 ## Commands
 
-| Command                 | Action                                                          |
-| ----------------------- | --------------------------------------------------------------- |
-| `npm run build-ghpages` | Build to `_site/` with `--pathprefix=/kp-web/` for GitHub Pages |
-| `npm start`             | Dev server at `http://localhost:8080` (no prefix)               |
-| `npm run start:prod`    | Build + serve `_site/` via `eleventy-dev-server`                |
-| `npm run format`        | Prettier. No linter, typechecker, or test framework exists.     |
+| Command                 | Action                                                               |
+| ----------------------- | -------------------------------------------------------------------- |
+| `npm run build-ghpages` | Build to `_site/` with `--pathprefix=/kp-web/` for GitHub Pages      |
+| `npm start`             | Dev server at `http://localhost:8080` (no prefix)                    |
+| `npm run start:prod`    | Build + serve `_site/` via `eleventy-dev-server`                     |
+| `npm run format`        | Prettier (manual). No linter, typechecker, or test framework exists. |
+| `npm run clean`         | Remove `_site/` output directory.                                    |
+| `npm run rebuild`       | `clean` + `build-ghpages`.                                           |
 
 ## Architecture
 
@@ -23,7 +25,7 @@ src/
 │   ├── script.js
 │   └── uploads/
 ├── _data/          # Global data: site.js (routes, navigation, org, tariffsUpdated)
-├── _includes/      # Nunjucks layouts: app.njk (base), post.njk (news detail)
+├── _includes/      # Nunjucks layouts: base.njk (base), post.njk (news detail)
 ├── content/        # CMS-managed content collections
 │   ├── documents/  #   Markdown, permalink: false (collection only, no pages)
 │   ├── news/       #   Markdown with layout: post.njk, sorted by date desc
@@ -35,7 +37,7 @@ src/
 
 - Data files are ESM (`*.js`), not JSON
 - Navigation is manual — adding a page means updating `src/_data/site.js` (routes + navigation in one file)
-- `site.js` uses `export default { routes, navigation, org, tariffsUpdated }` — accessible in templates via `{{ site.routes.* }}`, `{{ site.org.* }}`, `{{ site.navigation.* }}`, `{{ site.tariffsUpdated }}`. Template loop variables (`{% for navigation in site.navigation.items %}` → inner `{{ navigation.url }}`) shadow the outer `site.navigation`.
+- `site.js` uses `export default { routes, navigation, org }` — accessible in templates via `{{ site.routes.* }}`, `{{ site.org.* }}`, `{{ site.navigation.* }}`. Template loop variables (`{% for navigation in site.navigation.items %}` → inner `{{ navigation.url }}`) shadow the outer `site.navigation`.
 - `documents.11tydata.js`, `services.11tydata.js`, `tariffs.11tydata.js` set `permalink: false` — collections only, no rendered pages
 - `eleventy.config.js` uses `11ty.ts` for type hints only; its `defineConfig` is a no-op
 
@@ -46,7 +48,7 @@ src/
 - **CMS**: Sveltia CMS loaded from unpkg (version pinned in `admin/index.html`). GitHub backend, repo `kpserhiiliashko-blip/kp-web`. Media uploads stored in `src/_assets/uploads/`.
 - **Dates**: Custom filter `dmyDateFormat` with `uk-UA` locale.
 - **Script.js**: Handles nav burger + redirects GitHub OAuth tokens to `/admin/`. The "Повернутися на сайт" link derives site root from `window.location.pathname` (works with and without prefix).
-- **Husky**: Pre-commit hook runs Prettier on staged files via `prettier --write`.
+- **Husky**: Pre-commit hook runs `prettier --write` on staged files via `git diff -z | xargs -0`, then `git update-index --again`.
 - **README is stale**: References CloudCannon CMS, wrong data file paths (`.json` vs `.js`). Trust configs and source code.
 
 ## CMS content editing

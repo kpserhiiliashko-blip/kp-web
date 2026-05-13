@@ -1,5 +1,5 @@
 ---
-layout: app.njk
+layout: base.njk
 title: Тарифи
 description: Інформація щодо тарифів
 permalink: /tariffs/
@@ -8,9 +8,11 @@ permalink: /tariffs/
 <section class="section">
   <div class="container">
     <h1>Тарифи на услуги</h1>
+    {% set latestDate = collections.tariffs | sort(false, false, "data.date") |
+    last %}
     <p class="info-text">
       Актуальні тарифи на послуги відповідно до постанови міської ради від {{
-      site.tariffsUpdated }}
+      latestDate.data.date | dmyDateFormat }}
     </p>
 
     <div class="tariff-tables">

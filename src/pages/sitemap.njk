@@ -1,0 +1,21 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for key, route in site.routes %}
+  {% if key != 'admin' %}
+  <url>
+    <loc>{{ site.url }}{{ route }}</loc>
+  </url>
+  {% endif %}
+{% endfor %}
+{% for entry in collections.news %}
+  <url>
+    <loc>{{ site.url }}{{ entry.url }}</loc>
+    <lastmod>{{ entry.date | isoDate }}</lastmod>
+  </url>
+{% endfor %}
+</urlset>

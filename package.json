@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "build-ghpages": "eleventy --pathprefix=/kp-web/",
-    "start:prod": "npm run build-ghpages && eleventy-dev-server --dir=_site",
-    "start": "eleventy --serve",
-    "format": "prettier --write **/*.{js,json,css,md,html}"
+    "clean": "node -e \"fs.rmSync('_site', { recursive: true, force: true })\"",
+    "format": "prettier --write **/*.{js,json,css,md,html}",
+    "start": "npm run clean && eleventy --serve",
+    "start:prod": "npm run clean && npm run build-ghpages && eleventy-dev-server --dir=_site",
+    "build-ghpages": "eleventy --pathprefix=/kp-web/"
   },
   "keywords": [],
   "author": "",

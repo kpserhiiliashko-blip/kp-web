@@ -13,7 +13,7 @@ collections:
     label: 'Новини'
     folder: 'src/content/news'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     extension: 'md'
     fields:
       - {
@@ -35,7 +35,7 @@ collections:
     label: 'Документи'
     folder: 'src/content/documents'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     extension: 'md'
     fields:
       - { label: 'Назва', name: 'title', widget: 'string' }
@@ -87,6 +87,12 @@ collections:
     extension: 'md'
     fields:
       - { label: 'Назва', name: 'name', widget: 'string' }
+      - {
+          label: 'Дата актуалізації',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD',
+        }
       - { label: 'Ціна', name: 'price', widget: 'string' }
       - { label: 'Одиниця', name: 'unit', widget: 'string' }
       - label: 'Категорія'

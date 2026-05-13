@@ -1,13 +1,16 @@
 ---
-layout: app.njk
-title: Сторінку не знайдено
+layout: base.njk
+title: 404 - сторінку не знайдено
 permalink: /404.html
+eleventyExcludeFromCollections: true
 ---
 
 <section class="section">
-  <div class="container" style="text-align: center; padding: 4rem 0">
-    <h1>404</h1>
-    <p>Сторінку не знайдено.</p>
-    <a href="{{ site.routes.home }}" class="btn btn-primary">На головну</a>
+  <div class="container" style="text-align: center">
+    <h1 style="font-size: 200px">404</h1>
+    <p class="phone-urgent" style="font-size: 30px">Сторінку не знайдено.</p>
+    <a href="{{ site.routes.home | url }}" class="btn btn-primary"
+      >Повернутись на головну</a
+    >
   </div>
 </section>

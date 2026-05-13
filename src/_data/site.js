@@ -1,4 +1,4 @@
-const meta = {};
+const url = 'https://kpserhiiliashko-blip.github.io/kp-web';
 
 const routes = {
   home: '/',
@@ -31,6 +31,4 @@ const org = {
   hours: 'Пн-Пт: 08:00-17:00, Сб: 09:00-13:00',
 };
 
-const tariffsUpdated = '2026-04-20';
-
-export default { routes, navigation, org, tariffsUpdated };
+export default { url, routes, navigation, org };
