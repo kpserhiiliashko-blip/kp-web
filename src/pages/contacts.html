@@ -13,7 +13,7 @@ permalink: /contacts/
       одразу на гарячу лінію.
     </p>
 
-    <section>
+    <section class="section-inner">
       <div class="contact-primary">
         <h2>Основний канал звернення</h2>
         <p class="contact-info">
@@ -27,7 +27,7 @@ permalink: /contacts/
 
     <section class="section-inner">
       <h2>Аварійні ситуації</h2>
-      <div class="alert">
+      <div class="alert" role="alert">
         <p><strong>У разі аварії (витік, відсутність води):</strong></p>
         <p class="phone-urgent">
           <a href="tel:{{ site.org.phone }}"
@@ -42,21 +42,29 @@ permalink: /contacts/
       <h2>Інші способи зв'язку</h2>
       <div class="contact-list">
         <article class="contact-row">
-          <h3>Email</h3>
-          <p class="contact-info">
-            <a href="mailto:{{ site.org.email }}">{{ site.org.email }}</a>
-          </p>
-          <p class="small">Зазвичай відповідаємо протягом 24 годин.</p>
+          <dl>
+            <dt>Email</dt>
+            <dd class="contact-info">
+              <a href="mailto:{{ site.org.email }}">{{ site.org.email }}</a>
+            </dd>
+            <dd class="small">Зазвичай відповідаємо протягом 24 годин.</dd>
+          </dl>
         </article>
         <article class="contact-row">
-          <h3>Офіс</h3>
-          <p class="contact-info">{{ site.org.address }}</p>
-          <p class="small">Прийом громадян за графіком роботи підприємства.</p>
+          <dl>
+            <dt>Офіс</dt>
+            <dd class="contact-info">{{ site.org.address }}</dd>
+            <dd class="small">
+              Прийом громадян за графіком роботи підприємства.
+            </dd>
+          </dl>
         </article>
         <article class="contact-row">
-          <h3>Графік роботи</h3>
-          <p class="contact-info">{{ site.org.hours }}</p>
-          <p class="small">Аварійна служба працює 24/7.</p>
+          <dl>
+            <dt>Графік роботи</dt>
+            <dd class="contact-info">{{ site.org.hours }}</dd>
+            <dd class="small">Аварійна служба працює 24/7.</dd>
+          </dl>
         </article>
       </div>
     </section>
@@ -65,7 +73,7 @@ permalink: /contacts/
       <h2>Поширені питання</h2>
       <dl class="faq">
         <div class="faq-item">
-          <dt><h3>Як повідомити про витік?</h3></dt>
+          <dt><strong>Як повідомити про витік?</strong></dt>
           <dd>
             <p>
               Негайно зателефонуйте на гарячу лінію. Спеціаліст прибуде протягом
@@ -74,7 +82,7 @@ permalink: /contacts/
           </dd>
         </div>
         <div class="faq-item">
-          <dt><h3>Як сплатити рахунок?</h3></dt>
+          <dt><strong>Як сплатити рахунок?</strong></dt>
           <dd>
             <p>
               Можна сплатити в офісі, через онлайн-банк за рахунком у платіжці
@@ -83,7 +91,7 @@ permalink: /contacts/
           </dd>
         </div>
         <div class="faq-item">
-          <dt><h3>Як отримати довідку про водопровід?</h3></dt>
+          <dt><strong>Як отримати довідку про водопровід?</strong></dt>
           <dd>
             <p>
               Звертайтесь особисто до нас у офіс з паспортом та документом на

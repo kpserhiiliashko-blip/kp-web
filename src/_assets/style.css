@@ -589,9 +589,16 @@ tr:hover {
   padding: calc(var(--spacing-unit) * 2.5);
 }
 
-.contact-row h3 {
+.contact-row dt {
   margin-top: 0;
   margin-bottom: calc(var(--spacing-unit) * 1);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.contact-row dl {
+  margin: 0;
 }
 
 .contact-info {
@@ -640,8 +647,10 @@ tr:hover {
   border-radius: var(--radius-sm);
 }
 
-.faq-item h3 {
-  margin-top: 0;
+.faq-item dt {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text-color);
 }
 
 /* ==================== News ==================== */
@@ -889,10 +898,6 @@ tr:hover {
   th,
   td {
     padding: calc(var(--spacing-unit) * 1);
-  }
-
-  .news-item:hover {
-    background-color: #fafcff;
   }
 
   .service-card {
