@@ -1,3 +1,4 @@
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 import { defineConfig } from '11ty.ts';
 
 export default defineConfig((eleventyConfig) => {
@@ -5,6 +6,27 @@ export default defineConfig((eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/_assets': 'assets' });
   eleventyConfig.addPassthroughCopy({ 'src/_admin': 'admin' });
   eleventyConfig.ignores.add('src/_admin/**');
+
+  // optimize images
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    // output formats
+    formats: ['webp', 'auto'],
+    // output widths
+    widths: ['auto'],
+
+    // optional, attributes assigned on <img> nodes override these values
+    htmlOptions: {
+      imgAttributes: {
+        loading: 'lazy',
+        decoding: 'async',
+      },
+      pictureAttributes: {},
+    },
+
+    sharpOptions: {
+      animated: true,
+    },
+  });
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
 
